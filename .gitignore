@@ -1,0 +1,13 @@
+# Audience work — local only
+output/research/*
+output/figma/*
+output/images/*
+!output/**/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
