@@ -1,83 +1,109 @@
 # AI Designer Workshop — Live
 
-Run a live design workshop driven by any MCP-capable AI agent.
+Run a live design workshop where your AI agent researches competitors, assigns design tokens to Figma, builds a photo marketplace homepage, and generates image prompts — all in real time.
 
-This repo is a self-contained harness: point an agent at `AGENTS.md`, give it a brief,
-and it runs a real design session — research → references → visual direction → Figma/export —
-writing artifacts into `output/` as it goes. No app, no build step. Markdown + folders + an agent.
+Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo and it runs the full workshop end-to-end.
 
 ---
 
 ## What you need
 
-- Any MCP-capable agent (Claude Code, Cursor, Codex, Hermes, …)
-- Optional MCP servers, wired in the agent, for the live parts:
-  - **Research / web** — competitor + reference gathering
-  - **Image generation** — moodboards, visual concepts
-  - **Figma** — write frames/pages into a real file during the session
+- **Figma desktop app** (required for dev plugin import)
+- **Any MCP-capable AI agent** — Claude Code, Codex, Cursor, Hermes, Windsurf, VS Code Copilot
+- **Bun** installed ([bun.sh](https://bun.sh))
+- **figma-mcp-bridge fork** — cloned and built (see `setup/`)
 
-Everything degrades gracefully. No Figma MCP? Agent exports HTML/SVG into `output/figma/`.
-No image MCP? Agent writes prompts into `output/images/prompts.md`.
+Optional but better:
+- **Mobbin MCP** — for real competitor app screens (if unavailable, agent falls back to Google search)
 
 ---
 
-## Quickstart
+## Quick start
 
 ```
 1. Open this folder in your agent.
-2. Say: "Read AGENTS.md, then run Session 1 for this brief: <your brief>."
-3. Watch artifacts land in output/. Ship the useful ones.
+2. Say: "Read AGENTS.md and run the workshop."
+3. Follow the pauses — the agent stops between phases for your input.
 ```
+
+That's it. The agent reads `AGENTS.md`, installs the bridge, configures MCP, and runs both sessions.
+
+---
+
+## Agenda
+
+### Setup (15 min)
+
+Install the figma-mcp-bridge fork, configure MCP for your agent, verify the connection. See `setup/` for step-by-step instructions covering 6 agents.
+
+### Session 1 — Photo Marketplace Homepage (45 min)
+
+| Phase | Time | What happens |
+|---|---|---|
+| **Phase 1: Research** | 10 min | Agent researches 4-5 photo marketplace competitors (Mobbin or Google). Produces a pattern analysis report. You pick 1 as the design reference. |
+| **Phase 2: Token Assignment** | 10 min | Agent reads `assets/DESIGN.md` and pushes real design tokens into Figma — variable collections, color swatches, named text styles. **This is the "wow" moment** — watch tokens appear live in Figma's sidebar. |
+| **Phase 3: Build + Iterate** | 25 min | Agent builds the homepage using the assigned tokens. Iterates 4-5 times, screenshotting and evaluating each pass against the competitor reference. Logs every iteration. |
+
+### Session 2 — Image Prompts for Placeholders (15 min)
+
+Agent reads the Figma file, finds all image placeholder frames, and crafts structured image prompts using the 8-section template. Output is copy-pasteable — paste into your preferred image provider (Midjourney, DALL-E, FAL, whatever).
 
 ---
 
 ## Repo layout
 
 ```
-AGENTS.md          agent operating instructions (the important file)
-README.md          this file
-LICENSE
+AGENTS.md              ← agent entry point (the conductor)
+README.md              ← this file
 
-setup/             one-time environment + MCP wiring notes
-session-1/         session 1 script, prompt, agenda, materials
-session-2/         session 2 script, prompt, agenda, materials
+setup/                 one-time install + MCP config
+  install-figma-bridge.md    clone fork, bun build, import Figma plugin
+  mcp-config-examples.md     config snippets for 6 agents
+  verify.md                  health check (list_files, port 1994)
 
-examples/          worked reference output — what "good" looks like
-  research/        example research synthesis
-  images/          example moodboard prompts + exports
-  figma/           example frame structure / handoff spec
+assets/
+  DESIGN.md            baseline design tokens (colors, typography, spacing, components)
 
-output/            live session artifacts land here
-  research/        agent-written research
-  images/          agent-generated visuals
-  figma/           agent-written frames / specs
+session-1/             photo marketplace homepage
+  phase-1-research.md        competitor research (Mobbin or Google)
+  phase-2-tokens.md          push DESIGN.md tokens to Figma via MCP
+  phase-3-build-iterate.md   build homepage + iterate 4-5x
+  report-template.md         Phase 1 output format
+  iteration-log-template.md  Phase 3 log format
 
-assets/            logos, fonts, brand inputs, screenshots
+session-2/             image prompts for placeholders
+  image-prompt-template.md   8-section structured prompt format
+  generate-prompts.md        agent: find placeholders → craft prompts
+
+examples/              what "good" looks like — read before producing
+  research/                  example competitor analysis (Shutterstock, Unsplash, Getty, Adobe Stock, Pexels)
+  figma/                     example adapted DESIGN.md + iteration log
+  images/                    example image prompts for 4 placeholder slots
+
+output/                live session artifacts (gitignored)
+  research/                  agent-written reports
+  figma/                     screenshots, iteration logs, token exports
+  images/                    generated image prompts
 ```
 
-`examples/` is read-only reference. `output/` is scratch — safe to wipe between sessions.
+`examples/` is read-only reference. `output/` is scratch — safe to wipe between workshops.
 
 ---
 
-## Sessions
+## The fork
 
-**Session 1 — Understand & aim.** Brief intake, landscape research, reference collection,
-moodboard, 2–3 visual directions. Output: a chosen direction with rationale and references.
+This workshop uses [`dickyudhandika/figma-mcp-bridge`](https://github.com/dickyudhandika/figma-mcp-bridge) (branch `feat/create-text-style`), not the upstream `gethopp/figma-mcp-bridge`.
 
-**Session 2 — Design & hand off.** Take the chosen direction, build the screens in Figma,
-produce a token/component pass and a handoff spec. Output: a Figma artifact + a written spec
-a developer can build from.
+The fork adds 4 tools the upstream lacks:
 
-Each session folder holds the agenda, the agent prompt, and the presenter script.
+| Tool | Why we need it |
+|---|---|
+| `create_variable_collection` | Create Figma variable collections (design tokens) |
+| `create_variables` | Batch-create color variables as hex strings |
+| `set_bound_variable` | Bind variables to node fields (fill, radius, etc.) |
+| `create_text_style` | Create named Figma text styles (H1, Body, Label, etc.) |
 
----
-
-## Rules that make it work
-
-- **Artifacts over chat.** Every step ends in a file in `output/`. If it's not on disk, it didn't happen.
-- **References before opinions.** The agent gathers real references before proposing direction.
-- **One direction wins.** The agent recommends; the human decides. No hedging across three options.
-- **Human in the loop.** Live means the human steers between phases, not only at the end.
+Without these, Phase 2 can't push real tokens — you'd get visual swatches only, not actual Figma variables and styles.
 
 ---
 
