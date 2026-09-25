@@ -82,7 +82,7 @@ session-2.md           run sheet: image prompts into placeholders
 
 setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
-  mobbin.md                   Mobbin MCP — hosted, paid plan required, fallback if not
+  mobbin.md                   Mobbin MCP — hosted, paid plan required
   mcp-config-examples.md      MCP config snippets for 6 agents, both servers
   verify.md                   verification, two tiers: primary (7 checks) + optional (aimg)
   aimg.md                     optional /aimg image-prompt skill (any agent)

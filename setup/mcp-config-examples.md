@@ -210,7 +210,7 @@ mcp_servers:
 
 **One-click install for some clients.** Claude Code, Cursor, Codex, ChatGPT, Figma and v0 have a guided install — see [docs.mobbin.com/mcp/clients/overview](https://docs.mobbin.com/mcp/clients/overview). Use it and skip the config above.
 
-**First use opens a browser window** to sign in to Mobbin and authorize. That requires a **paid Pro or Team plan** — a free account connects and then returns nothing. Full detail, including the fallback if nobody in the room has a paid plan: `setup/mobbin.md`.
+**First use opens a browser window** to sign in to Mobbin and authorize. That requires a **paid Pro or Team plan** — a free account connects and then returns nothing. Full detail: `setup/mobbin.md`.
 
 **Restart your agent** after adding it, same as the bridge.
 

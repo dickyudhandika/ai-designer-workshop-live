@@ -30,7 +30,7 @@ This is the trap worth knowing in advance. A free Mobbin account can add the ser
 
 Check your plan before the session: [mobbin.com/pricing](https://mobbin.com/pricing)
 
-**No paid plan, or you'd rather not buy one?** Session 1 has a fallback — see [If you don't have Mobbin](#if-you-dont-have-mobbin) below. It's honest but weaker, and you should decide which path you're on before you're on stage.
+**Mobbin MCP requires a paid plan, and that's the intended path.** Sort this out before the session — a free account connects, completes OAuth, looks fine, and then returns `[]` for every query with no error. There is no working substitute for what Mobbin gives the room: real shipped screens at phone resolution. Buy the plan.
 
 **Usage during beta is unlimited.** Mobbin says limits will apply later ([docs.mobbin.com/ai-credits](https://docs.mobbin.com/ai-credits)) — so don't ration queries in the session. The library is 600,000+ shipped screens.
 
@@ -133,17 +133,3 @@ Expected: a number in the dozens and three real app names. **Not** an empty arra
 4. **Agent restarted before the config was saved.**
 
 Full session-level detail on query shape: `session-1.md` step 2.
-
----
-
-## If you don't have Mobbin
-
-Session 1 step 2 can run without it, at a cost. The agent can't show you real shipped screens, so you lose the thing the step exists for: evidence from products that already solved "make someone buy a photo".
-
-**The fallback, in order of preference:**
-
-1. **Have the room bring screenshots.** Everyone open two or three image-grid apps on their phone. The research becomes a room activity instead of an agent task — worse for the demo, better for the discussion, and it's real evidence.
-2. **Public web search.** Ask the agent to search the web for marketplace home screens and cite the URLs. Weaker than Mobbin: results are marketing pages and blog roundups, not shipped UI at phone resolution, and the agent may describe a screen from memory instead of reading it.
-3. **Wireframes, labelled as such.** If neither is available, have the agent draw the layout structure and label every frame `wireframe — capture unavailable`. Say it out loud so the room knows what they're looking at.
-
-**Never let the agent describe a screen it hasn't actually read.** That's the one failure mode that looks like success — plausible, confident, and fabricated. Session 1 step 2 states this rule and the fallback repeats it.

@@ -46,7 +46,7 @@ Expected: a count in the dozens, and three real app names.
 
 This is the trap: a free account adds the server, completes OAuth, and looks connected — then every query returns `[]` with no error. If 1b came back empty and your config and query are both fine, check your plan at [mobbin.com/pricing](https://mobbin.com/pricing).
 
-No paid plan? Session 1 has a fallback — `setup/mobbin.md`, section "If you don't have Mobbin". Decide which path you're on **before** the workshop, not during step 2.
+No paid plan? Get one — that's the path this workshop assumes. The plan is a prerequisite, not an option.
 
 Full detail: `setup/mobbin.md`.
 
