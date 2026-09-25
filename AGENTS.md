@@ -47,7 +47,9 @@ Point the agent's config at the **built fork**, not the npm package:
 
 Per-agent snippets (Claude Desktop, Claude Code, Cursor, Windsurf, Codex, VS Code, Hermes): `setup/mcp-config-examples.md`. Then **fully restart the agent.**
 
-## 6. Verify — all six must pass
+## 6. Verify — primary tier, all six must pass
+
+Work down this table. **Don't start Session 1 until all six pass** — a half-connected bridge fails silently and burns workshop time.
 
 | # | Check | Expected |
 |---|---|---|
@@ -60,13 +62,15 @@ Per-agent snippets (Claude Desktop, Claude Code, Cursor, Windsurf, Codex, VS Cod
 
 Missing tool in #2 → config points at the npm package. Empty #3 → plugin isn't running. `unsaved-` fileKey is fine — everything still works.
 
+Full detail for every check, plus the fork-specific write tests: `setup/verify.md`.
+
 ---
 
-## Optional: install the `/aimg` skill
+## 7. Optional — install the `/aimg` skill
 
-Install this if you want your agent to turn a reference image into a reusable prompt. Skip it and your agent can still write prompts from the design — this just makes the reference-image route one step.
+Skip this and everything still works. Install it if you want your agent to turn a reference image into a reusable prompt in one step.
 
-**It writes prompts. It does not generate images** — that stays your call, and you take the prompts to your own provider.
+**It writes prompts. It does not generate images** — that stays the human's call, and they take the prompts to their own provider.
 
 The skill ships in this repo at `skills/aimg/SKILL.md`. Plain `SKILL.md`, no build step.
 
@@ -94,6 +98,14 @@ ln -sfn ~/.agents/skills/aimg ~/.codex/skills/aimg     # Codex
 
 Then restart the agent so it picks the skill up. There's nothing else to configure — no image provider needed.
 
+### Verify it
+
+```bash
+ls -la ~/.agents/skills/aimg/SKILL.md
+```
+
+Then ask your agent: *"do you have the aimg skill, and what does it do?"* It should find the skill and describe scanning an image into the eight-section format. Not found → restart the agent; still missing → see `setup/aimg.md`.
+
 ### What it makes your agent do
 
 Hand it a reference image and say *"scan this into a prompt"*. Three steps:
@@ -104,12 +116,10 @@ Hand it a reference image and say *"scan this into a prompt"*. Three steps:
 
 Then it stops. It's told not to generate — not a placeholder, not a mock, not an SVG stand-in.
 
-Full details: `setup/aimg.md`.
-
 ---
 
 ## Stop here
 
-Once all six pass, tell the human you're ready and wait. The rest of the workshop is driven by them from `session-1.md` and `session-2.md`.
+Once the **six primary checks** pass, tell the human you're ready and wait. Install `/aimg` only if they ask for it. The rest of the workshop is driven by them from `session-1.md` and `session-2.md`.
 
 More detail — port conflicts, rebuild rules, symptom→fix table: `setup/install-figma-bridge.md` and `setup/verify.md`.
