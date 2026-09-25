@@ -4,7 +4,7 @@
 
 Session 1 ended with a chosen variation: a real token system applied to a real design. It looks like a product.
 
-It isn't one yet. Every image on it is a gray rectangle — and the brief promised images better than a designer could afford to commission.
+It isn't one yet. Every image on it is a gray rectangle — and the brief promised a designer that these images look commissioned.
 
 ---
 
@@ -23,7 +23,7 @@ The agent's job ends at the prompt. Two reasons:
 - **Generation is your choice, not the agent's.** Model, style, credits, licence, resolution — those are decisions a person makes.
 - **A good prompt travels.** It survives being pasted anywhere. A generated image is one output of it, and one you can always redo.
 
-**Write for the brief, not for beauty.** The product promises designers imagery better than they can afford to commission. Every prompt here has to earn that — an image that looks like free stock breaks the promise on the one screen that's supposed to sell it.
+**Write for the brief, not for beauty.** The product's whole job is convincing a sceptic that these images are commissioned quality. Every prompt here has to earn that — an image that looks like free stock breaks the promise on the one screen that's supposed to sell it.
 
 **Time:** ~15 min. Find placeholders · write prompts · collect · review.
 
@@ -97,7 +97,7 @@ No text. No logos. No watermarks. No shape distortion.
 
 > For each placeholder, write a prompt using these eight sections in this order. Ground each one in what's actually next to the slot — the card title, the category name.
 >
-> The product promises images better than a designer could afford to commission. Write to that. Nothing here should read as stock filler.
+> The product's job is convincing a sceptical designer that these images look commissioned. Write to that. Nothing here should read as stock filler.
 >
 > For the collection band and the category row, write them as one set: same light direction, same colour temperature, same camera treatment. A collection that looks like five different photographers isn't a collection.
 >
@@ -160,7 +160,7 @@ Fix one prompt together, on screen. Cheapest possible place to catch a bad brief
 
 Take the prompts to your provider of choice and see the gray boxes become photographs. That part is yours, not the agent's.
 
-Then the brief closes: a designer lands on this screen, believes the work is better than they could afford, and pays for it. That's the whole product, and you built it from evidence, four directions, one decision, and a token system.
+Then the brief closes: a designer lands on this screen, stops believing AI stock looks cheap, and pays. That's the whole product, and you built it from evidence, four directions, one decision, and a token system.
 
 The same loop on a real project: research with evidence, several rough directions, one choice, tokens assigned, then real content. The AI photostock was a worked example — the shape of the workflow is the product.
 

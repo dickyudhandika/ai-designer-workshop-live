@@ -2,7 +2,7 @@
 
 Two sessions. Your AI agent researches, renders into Figma, assigns design tokens, builds and iterates a product — while the room watches.
 
-The product is an **AI photostock for designers**: images better than they could afford to commission, so their work looks more expensive and they charge accordingly. That commercial job is the brief the whole session designs against.
+The product is an **AI photostock for designers**: a mobile app where a designer buys images for a pitch, so the proposal looks like it came from a studio with a photo budget. That commercial job is the brief the whole session designs against — and the hard part is that AI stock has a bad reputation your buyer already believes.
 
 Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo. It installs the tooling first, then you drive both sessions by reading the files below and telling it what to do.
 
@@ -38,18 +38,22 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 ## Session 1 — Build an AI photostock for designers
 
-**The brief: sell images to designers, and make their work look more expensive.**
+**The brief: sell images to a designer who doesn't trust AI stock yet.**
 
-A mobile app where designers search, browse and buy AI-generated imagery. It's aimed at designers whose fee scales with how good their work looks — and who today either pay for a shoot or use free stock that makes everything around it look cheap. The promise is images better than they could afford to commission, so they ship premium work and charge accordingly.
+A mobile app where designers search, browse and buy AI-generated imagery. The buyer is a freelance designer with a pitch due — the proposal is where the work gets won, and it's competing against studios with a photo budget. Today they either commission a shoot that costs a day and a few thousand and can't wait for the deadline, or reach for free stock that makes the whole proposal look cheap.
 
-That promise is the design brief: not a gallery, a shop that has to feel like an upgrade.
+So the promise is: the images in their proposal look commissioned, same day, for almost nothing next to the shoot.
+
+**The hard part is the objection underneath it.** They've been burned. AI stock looks like AI stock — smooth, generic, wrong light — and free tiers taught them not to pay for it. A single screen has to convince someone already sceptical.
+
+That's the design brief: not a gallery, a shop that beats the objection before they scroll.
 
 `session-1.md` walks the room through seven steps:
 
-1. Set the brief — who buys, and why
+1. Set the brief — who buys, what it replaces, and the objection it has to beat
 2. Research layouts with Mobbin via MCP
 3. Pick 1–3 references you love — with reasons
-4. Merge the concepts and go lo-fi: 2–4 variations, each a different reason to buy
+4. Merge the concepts and go lo-fi: 2–4 variations, each a different argument for trusting it
 5. Pick the best one
 6. Assign your design tokens to it
 7. Inspect what the tokens improved and what they broke

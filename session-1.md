@@ -12,15 +12,17 @@ You're building an **AI photostock for designers**.
 
 **The product.** A mobile app where a designer searches, browses and buys AI-generated imagery. Photoreal, on-brief, licensed per image.
 
-**Who buys it.** Designers whose income scales with how good their work looks — freelancers quoting a project, in-house teams shipping a launch. Their portfolio *is* the sales pitch, and right now it's competing against studios with a photo budget.
+**Who buys it.** A freelance designer with a pitch due. Their fee depends on winning the work, and the winning happens in the proposal — the concepts, the mockups, the hero shot. That's where they're up against studios who have a photo budget.
 
-**The problem it solves.** Commissioning a shoot costs a day and a few thousand. Free stock looks like free stock — the room spots it in half a second, and it quietly devalues everything around it. There's a gap between *"I can't afford a photographer"* and *"this has to look expensive."*
+**What they do now.** Commission a shoot: a day and a few thousand, and the pitch usually can't wait. Or reach for free stock — and the client reads it in half a second, and the whole proposal drops a tier.
 
-**The promise.** Images better than the designer can afford to commission, faster than they can shoot them. They ship work that reads premium — and charge accordingly.
+**So they buy images to raise the price of their work.** Not because photography is expensive. Because the proposal has to look like it came from the studio with the budget, and theirs doesn't yet.
 
-**So the design has a job.** This is not a gallery. It's a shop that has to feel like an upgrade. Every screen answers one question: **does this convince a designer that their next project gets more expensive when they buy here?**
+**The promise.** The images in their proposal look commissioned. Same day, at a rounding error against the shoot.
 
-Keep that in the room's head for the whole session — it's what turns steps 2 to 7 into decisions instead of preferences.
+**The objection you have to beat — this is the hard part.** They've been burned. AI stock looks like AI stock: smooth, generic, wrong light, the same three faces. A designer who tried it once does not believe the promise, and free tiers taught them not to pay for it.
+
+**So the design has a job.** Not a gallery. It's a shop that has to convince someone who is already sceptical — on the first screen they open — that these images will hold up in front of a client. Every decision in this session answers that. Hold it in the room's head and steps 2 to 7 stop being preferences and start being arguments.
 
 **One idea holds the session together:** a design system is a contract, and you can watch an agent execute it against a real design tool. That happens at step 6.
 
@@ -36,13 +38,17 @@ Before anything is researched, say what's being built and who it's for. This ste
 
 > We're designing an AI photostock for designers — a mobile app where you search, browse and buy AI-generated images.
 >
-> **Who buys:** designers whose fee scales with how good their work looks — freelancers quoting a project, in-house teams shipping a launch. Today they either pay for a photoshoot or use free stock that makes everything around it look cheap.
+> **Who buys:** a freelance designer with a pitch due. Their fee depends on winning the work, and the work gets won in the proposal — against studios who have a photo budget.
 >
-> **The promise:** images better than they can afford to commission, faster than they can shoot. They ship premium-looking work, and charge for it.
+> **What it replaces:** a shoot that costs a day and a few thousand and can't wait for the deadline. Or free stock that makes the whole proposal look cheap.
 >
-> So the home screen has to sell. It's a shop, not a gallery. Treat this as a real product brief — everything we build today goes in one Figma file.
+> **The promise:** the images in their proposal look commissioned, same day, for almost nothing next to the shoot.
+>
+> **The hard part:** they've been burned. AI stock looks like AI stock, and free tiers taught them not to pay for it. So this screen has to convince someone sceptical.
+>
+> Home screen has to sell, not display. It's a shop, not a gallery. Treat this as a real product brief — everything we build today goes in one Figma file.
 
-**What good looks like:** the agent can state back who buys this, what it replaces, and what it promises. If it only says "an app for browsing images", the brief was too thin — say it again with the commercial job in it.
+**What good looks like:** the agent can state back who buys this, what it replaces, and the objection it has to beat. If it only says "an app for browsing images", the brief was too thin — say it again with the commercial job in it.
 
 ---
 
@@ -68,7 +74,7 @@ Mobile, not desktop — the product is a phone app, so the evidence has to be ph
 
 **What good looks like:** several named apps, each with a specific observation about its home screen. Not a list of logos.
 
-**Read the evidence commercially.** These are marketplaces — they've already solved "make someone buy a photo". Watch what they do to look like a shop rather than a gallery: price visibility, how the product sits in the frame, whether the first screen sells or just lists.
+**Read the evidence commercially.** These are marketplaces — they've already solved "make someone buy a photo", against the same sceptical buyer. Watch how they do it. Where does trust get built: a big hero image with the work shown off, a price sitting next to it, a named photographer, "used by" logos, a free first download? Note where proof sits versus where browsing sits. That ordering is the thing worth stealing.
 
 ---
 
@@ -94,11 +100,16 @@ Don't clone one reference. Merge the best decisions from your picks into a direc
 
 **Two to four variations is the useful range.** One isn't exploring. Past four you're burning time on directions nobody will pick.
 
-**Each variation answers a buying question, not a layout question.** Don't give me four grids — give me four arguments for why a designer pays:
+**Each variation answers the objection, not a layout question.** Don't give me four grids — give me four different arguments for why a designer who's been burned should pay here:
 
 > Merge the best of those into an AI photostock mobile homepage. Give me 4 quick lo-fi variations — structure only, grays and boxes, no images, no polish.
 >
-> Each one should take a different position on **why someone buys here**. Something like: *discovery-led* (search is the whole product), *proof-led* (the work shows off, price close by), *curation-led* (hand-picked sets, treated like an agency), *deal-led* (bundles, credits, one tap).
+> Each one takes a different position on **why a sceptical buyer trusts this**:
+>
+> - **proof-led** — the work is undeniable: big image, price next to it, nothing to hide
+> - **curation-led** — hand-picked sets, art-directed like an agency, taste as the guarantee
+> - **discovery-led** — search is the whole product: type what the brief needs, get it in one tap
+> - **deal-led** — risk is the block, so remove it: first image free, credits, no lock-in
 >
 > Name them A–D and put them side by side so I can compare.
 
@@ -116,7 +127,7 @@ Look at them together. Pick one, and say why it won.
 
 > I'm picking [X]. Tell me why it's the strongest of the four, and what you'd fix in it.
 
-**Pick the one that sells, not the one that's prettiest.** The test is the brief: if a designer landed on this screen, would they believe the images are worth paying for?
+**Pick the one that sells, not the one that's prettiest.** The test is the brief: a designer who's seen AI stock disappoint before lands on this screen — does this one beat the objection? If your pick wins on taste but doesn't answer "why should I believe these images", you picked the gallery.
 
 Everything after this happens to that frame only.
 
@@ -169,7 +180,7 @@ Two things to look for:
 
 If you find something like that, it's the lesson to land: **the token system doesn't make the design good, it makes the mistakes visible.** Then ask the room: fix the token, or fix the rule?
 
-**Then connect it back to the money.** A grey that measures 2.52:1 isn't a technicality — it's a screen that looks cheap, in a product whose entire job is looking expensive. Ask the room which of these findings a buyer would actually feel.
+**Then connect it back to the money.** A grey that measures 2.52:1 isn't a technicality — it's a screen that looks cheap, in a product whose only job is convincing a sceptic the work is premium. The token was the design system's own claim, and the measurement says the claim was false. That's the same failure as the product's own promise: it says "commissioned quality", and if the screen says "template", nobody pays. Ask the room which findings a buyer would actually feel.
 
 **What good looks like:** at least one thing named as improved and one thing named as broken or exposed — with a number attached to the second.
 
@@ -201,5 +212,5 @@ Adapt as you go. If the room is deep in the research, stay there. If they're imp
 - `assets/DESIGN.md` is the stated source of those tokens
 - The room has seen the variables appear live in Figma's sidebar
 - You've named one thing the tokens improved **and** one thing they broke, with a measurement
-- You can say in one sentence why this screen would make a designer pay for images
+- You can say in one sentence why this screen would make a sceptical designer pay for images
 - The chosen variation is ready for `session-2.md`
