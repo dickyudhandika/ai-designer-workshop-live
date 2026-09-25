@@ -1,11 +1,16 @@
-# Verify the Figma MCP Bridge
+# Verify setup
 
-Run these four checks in order. Do not start Session 1 until all four pass — a
-half-connected bridge fails silently and burns workshop time.
+Two tiers. **Primary is required** — both sessions depend on it. **Optional** adds conveniences, each verified separately.
+
+Work down the list. Don't start Session 1 until the primary tier passes end to end — a half-connected bridge fails silently and burns workshop time.
 
 Have your agent run the MCP calls; run the shell commands yourself.
 
 ---
+
+# Primary — required
+
+Everything in this tier must pass. Nothing in Session 1 works without it.
 
 ## 0. Prerequisite state
 
@@ -74,7 +79,7 @@ Then call **`get_styles`**. Expected: whatever local styles the file already has
 ## 5. Writes work — the two that matter
 
 Reading is upstream behaviour and almost always works. The fork's new tools are
-what Session 1 Phase 2 depends on, so test them now.
+what Session 1 step 6 depends on, so test them now.
 
 ### a. Frame (proves basic write)
 
@@ -151,6 +156,36 @@ ls -la /tmp/figma-verify.png
 
 ---
 
+**Primary tier complete?** Six checks, all passing. You can run the workshop.
+
+---
+
+# Optional — verify separately
+
+None of these are needed for Session 1, and Session 2 works without the skill. Install them if you want the convenience, then run the matching check.
+
+## `/aimg` — the image-prompt skill
+
+Turns a reference image into a reusable eight-section prompt. **Writes prompts, does not generate images.**
+
+**Install check:**
+
+```bash
+ls -la ~/.agents/skills/aimg/SKILL.md
+```
+
+Expected: the file exists. Symlinked instead of copied? `ls -l` shows an arrow to the real path — also fine.
+
+**Agent check:** ask your agent *"do you have the aimg skill, and what does it do?"* Expected: it finds the skill and describes scanning an image into the eight-section format.
+
+**Functional check:** hand your agent any image and say *"scan this into a prompt."* Expected: the filled eight-section block, on your clipboard.
+
+If the agent can't see it: restart the agent (skills load at startup). Still missing after a restart → the symlink points somewhere empty, or the agent reads only its own folder — re-check the paths in `setup/aimg.md`.
+
+Full detail: `setup/aimg.md`.
+
+---
+
 ## Troubleshooting
 
 | Symptom | Cause | Fix |
@@ -162,6 +197,6 @@ ls -la /tmp/figma-verify.png
 | Font load error | Font not in your Figma session | Pick an installed family, or use the documented fallback. |
 | Screenshot at the wrong place | Relative `outputPath` | Pass an absolute path. |
 | Writes fail after editing `server/src/` | `server/dist/` is stale | `cd server && bun run build`, then restart the agent. |
+| `/aimg` not found by the agent | Skill dir missing, or agent not restarted | Confirm `~/.agents/skills/aimg/SKILL.md` exists, then restart the agent. |
 
-Once step 6 passes, you're ready: tell your agent to **read `AGENTS.md` and run the
-workshop.**
+Once the primary tier passes, you're ready: tell your agent to **read `AGENTS.md` and run the workshop.**

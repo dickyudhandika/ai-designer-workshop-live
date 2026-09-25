@@ -1,10 +1,14 @@
 # `/aimg` — the image-prompt skill
 
-Optional, and installable on **any agent** — Codex, Claude Code, Cursor, Windsurf, Hermes.
+**Optional tier.** Not required for Session 1, and Session 2 works without it.
+
+Installable on **any agent** — Codex, Claude Code, Cursor, Windsurf, Hermes.
 
 It turns a reference image into a reusable eight-section prompt, and puts the block on your clipboard.
 
 **It does not generate images.** That's deliberate — see below.
+
+Verification for this tier lives in `verify.md` under **Optional**.
 
 ---
 
@@ -57,6 +61,16 @@ ln -sfn ~/.agents/skills/aimg ~/.codex/skills/aimg     # Codex
 Then **restart the agent** so it picks the skill up.
 
 No image provider needed. The scan job is vision only — nothing to configure.
+
+### Verify it
+
+```bash
+ls -la ~/.agents/skills/aimg/SKILL.md
+```
+
+Then ask your agent: *"do you have the aimg skill, and what does it do?"* It should find the skill and describe scanning an image into the eight-section format.
+
+Not found → the agent restarted before the file landed, or it reads only its own folder. Re-check the paths above and restart. Full check list: `verify.md`.
 
 ---
 

@@ -27,6 +27,11 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 `AGENTS.md` is install-only — it stops and waits once the bridge is verified. Every step after that is yours to call.
 
+**Setup has two tiers**, both in `setup/verify.md`:
+
+- **Primary — required.** The Figma bridge: six checks. Nothing in Session 1 works until they all pass.
+- **Optional — verified separately.** The `/aimg` skill (image prompts). Session 2 works without it.
+
 ---
 
 ## Session 1 — Build an AI photostock for designers
@@ -66,7 +71,7 @@ session-2.md           run sheet: image prompts into placeholders
 setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
   mcp-config-examples.md      MCP config snippets for 6 agents
-  verify.md                   health check
+  verify.md                   verification, two tiers: primary (bridge) + optional (aimg)
   aimg.md                     optional /aimg image-prompt skill (any agent)
 
 skills/
