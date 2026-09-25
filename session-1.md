@@ -6,25 +6,43 @@ Setup first: `AGENTS.md`, six checks passing.
 
 ---
 
-## The case study
+## The brief
 
-You're building an **AI photostock for designers** — a mobile product where designers browse, search and buy AI-generated imagery. Frame it as the polished case study you'd want for your next project: real research, several directions, one choice, a real token system.
+You're building an **AI photostock for designers**.
 
-It's a worked example. Swap the product if a different one fits your room better — what matters is that it's an **image grid you can search**, because that's what the whole session is shaped around.
+**The product.** A mobile app where a designer searches, browses and buys AI-generated imagery. Photoreal, on-brief, licensed per image.
+
+**Who buys it.** Designers whose income scales with how good their work looks — freelancers quoting a project, in-house teams shipping a launch. Their portfolio *is* the sales pitch, and right now it's competing against studios with a photo budget.
+
+**The problem it solves.** Commissioning a shoot costs a day and a few thousand. Free stock looks like free stock — the room spots it in half a second, and it quietly devalues everything around it. There's a gap between *"I can't afford a photographer"* and *"this has to look expensive."*
+
+**The promise.** Images better than the designer can afford to commission, faster than they can shoot them. They ship work that reads premium — and charge accordingly.
+
+**So the design has a job.** This is not a gallery. It's a shop that has to feel like an upgrade. Every screen answers one question: **does this convince a designer that their next project gets more expensive when they buy here?**
+
+Keep that in the room's head for the whole session — it's what turns steps 2 to 7 into decisions instead of preferences.
 
 **One idea holds the session together:** a design system is a contract, and you can watch an agent execute it against a real design tool. That happens at step 6.
+
+It's a worked example. Swap the product if a different one fits your room better — what matters is that it's an **image grid you can search and buy from**, because that's what the session is shaped around.
 
 **Time:** ~45 min, adjustable. Research · pick references · lo-fi · choose · tokens · inspect.
 
 ---
 
-## Step 1 — Frame the case study
+## Step 1 — Set the brief
 
-Before anything is researched, say what's being built and what it's for. This context steers every later decision, so it's worth a sentence out loud rather than an assumption.
+Before anything is researched, say what's being built and who it's for. This steers every later decision, so it's worth saying out loud rather than assuming.
 
-> We're designing an AI photostock for designers — a mobile app where you browse, search and buy AI-generated images. Treat it as a portfolio-grade case study. Everything we build today goes in one Figma file.
+> We're designing an AI photostock for designers — a mobile app where you search, browse and buy AI-generated images.
+>
+> **Who buys:** designers whose fee scales with how good their work looks — freelancers quoting a project, in-house teams shipping a launch. Today they either pay for a photoshoot or use free stock that makes everything around it look cheap.
+>
+> **The promise:** images better than they can afford to commission, faster than they can shoot. They ship premium-looking work, and charge for it.
+>
+> So the home screen has to sell. It's a shop, not a gallery. Treat this as a real product brief — everything we build today goes in one Figma file.
 
-**What good looks like:** the agent can state back what the product is and who it's for. If it can't, the brief was too thin.
+**What good looks like:** the agent can state back who buys this, what it replaces, and what it promises. If it only says "an app for browsing images", the brief was too thin — say it again with the commercial job in it.
 
 ---
 
@@ -50,6 +68,8 @@ Mobile, not desktop — the product is a phone app, so the evidence has to be ph
 
 **What good looks like:** several named apps, each with a specific observation about its home screen. Not a list of logos.
 
+**Read the evidence commercially.** These are marketplaces — they've already solved "make someone buy a photo". Watch what they do to look like a shop rather than a gallery: price visibility, how the product sits in the frame, whether the first screen sells or just lists.
+
 ---
 
 ## Step 3 — Pick 1–3 you love, with reasons
@@ -74,9 +94,13 @@ Don't clone one reference. Merge the best decisions from your picks into a direc
 
 **Two to four variations is the useful range.** One isn't exploring. Past four you're burning time on directions nobody will pick.
 
+**Each variation answers a buying question, not a layout question.** Don't give me four grids — give me four arguments for why a designer pays:
+
 > Merge the best of those into an AI photostock mobile homepage. Give me 4 quick lo-fi variations — structure only, grays and boxes, no images, no polish.
 >
-> Make each a genuinely different answer to "how does a designer find an image here". Name them A–D and put them side by side so I can compare.
+> Each one should take a different position on **why someone buys here**. Something like: *discovery-led* (search is the whole product), *proof-led* (the work shows off, price close by), *curation-led* (hand-picked sets, treated like an agency), *deal-led* (bundles, credits, one tap).
+>
+> Name them A–D and put them side by side so I can compare.
 
 **Hold one frame width across all of them** — phone width, 390px — so they're actually comparable.
 
@@ -91,6 +115,8 @@ Worth varying: where search sits, one column vs two, what's in the bottom bar, w
 Look at them together. Pick one, and say why it won.
 
 > I'm picking [X]. Tell me why it's the strongest of the four, and what you'd fix in it.
+
+**Pick the one that sells, not the one that's prettiest.** The test is the brief: if a designer landed on this screen, would they believe the images are worth paying for?
 
 Everything after this happens to that frame only.
 
@@ -143,6 +169,8 @@ Two things to look for:
 
 If you find something like that, it's the lesson to land: **the token system doesn't make the design good, it makes the mistakes visible.** Then ask the room: fix the token, or fix the rule?
 
+**Then connect it back to the money.** A grey that measures 2.52:1 isn't a technicality — it's a screen that looks cheap, in a product whose entire job is looking expensive. Ask the room which of these findings a buyer would actually feel.
+
 **What good looks like:** at least one thing named as improved and one thing named as broken or exposed — with a number attached to the second.
 
 ---
@@ -173,4 +201,5 @@ Adapt as you go. If the room is deep in the research, stay there. If they're imp
 - `assets/DESIGN.md` is the stated source of those tokens
 - The room has seen the variables appear live in Figma's sidebar
 - You've named one thing the tokens improved **and** one thing they broke, with a measurement
+- You can say in one sentence why this screen would make a designer pay for images
 - The chosen variation is ready for `session-2.md`
