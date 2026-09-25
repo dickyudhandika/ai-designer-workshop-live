@@ -12,22 +12,22 @@ You're building an **AI photostock for designers**.
 
 **What it does.** A mobile app where a designer types what they need, finds a photo, and buys it. `AI photostock`, `photoreal`, `licensed per image`.
 
-**What it's for.** Everywhere a designer needs a photo:
+**What it's for.** Designers need photos on almost everything they ship:
 
 - `A website` — hero image, section backgrounds, product shots
-- `A pitch` — the deck that has to look like it came from a studio with a budget
+- `A pitch` — the deck that has to look like a studio with a budget made it
 - `A mobile app design` — onboarding, empty states, cards, feature art
 - `Marketing materials` — ads, social posts, banners, email headers
 
-Which is the real argument: this isn't a niche for photographers. Every designer needs photos, constantly, on every surface they ship.
+This isn't a niche for photographers. Every designer needs photos, all the time, on every surface.
 
-**What they do today.** Two bad options. Commission a shoot — a day and a few thousand, and the deadline won't wait. Or grab `free stock` — fast, but the client spots it in half a second and the whole thing looks `cheap`.
+**What they do today.** Two bad options. Commission a shoot: a day and a few thousand, and the deadline won't wait. Or grab `free stock`: fast, but the client spots it in half a second and the work looks `cheap`.
 
-**So they come here.** Describe the image, pay for it, use it today. The page looks like it came from a shoot they couldn't afford.
+**So they come here.** Describe the image, pay for it, use it today. Drop it in the hero, the deck, the app screen. It looks like the studio paid for a shoot.
 
-**The hard part.** `AI stock` has a bad name — smooth, generic, wrong light, the same three faces. They've tried it before and don't `believe` it. The first screen has to convince someone who's already `sceptical`.
+**The hard part.** `AI stock` has a bad name. Smooth, generic, wrong light, the same three faces. They've tried it before and don't `believe` it. The first screen has to convince someone who is already `sceptical`.
 
-**So the design has a job.** Not a `gallery`. A `shop` that makes a sceptic believe these images are good enough to put in front of a client.
+**So the design has a job.** Not a `gallery`. A `shop`. It has to convince a sceptic these images are good enough to put in front of a client.
 
 **One idea holds the session together:** a design system is a contract, and you can watch an agent execute it against a real design tool. That happens at step 6.
 
@@ -41,13 +41,13 @@ It's a worked example. Swap the product if a different one fits your room better
 
 Before anything is researched, say what's being built and who it's for. This steers every later decision, so it's worth saying out loud rather than assuming.
 
-> We're designing an AI photostock for designers — a mobile app where you type what you need, find a photo, and buy it.
+> We're designing an AI photostock for designers — a mobile app. You type what you need, find a photo, buy it.
 >
-> **What it's for:** everywhere a designer needs a photo — a website (hero, section backgrounds, product shots), a pitch deck, a mobile app design (onboarding, empty states, cards), and marketing materials (ads, social posts, banners). Not a niche — every designer needs photos constantly, on everything they ship.
+> **What it's for:** designers need photos on almost everything they ship. A website (hero, section backgrounds, product shots). A pitch deck. A mobile app design (onboarding, empty states, cards). Marketing materials (ads, social posts, banners).
 >
-> **What it replaces:** commissioning a shoot, which costs a day and a few thousand and can't wait for the deadline. Or free stock, which the client spots instantly and which makes the whole thing look cheap.
+> **What it replaces:** commissioning a shoot, which costs a day and a few thousand and won't wait for the deadline. Or free stock, which the client spots instantly and which makes the work look cheap.
 >
-> **The hard part:** AI stock has a bad name — smooth, generic, wrong light, the same three faces. They've tried it and don't believe it. So this screen has to convince someone sceptical.
+> **The hard part:** AI stock has a bad name. Smooth, generic, wrong light, the same three faces. They've tried it and don't believe it. So this screen has to convince someone who is already sceptical.
 >
 > Home screen has to sell, not display. It's a shop, not a gallery. Treat this as a real product brief — everything we build today goes in one Figma file.
 

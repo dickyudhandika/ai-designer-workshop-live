@@ -40,13 +40,13 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 **The brief: sell photos to designers, to a buyer who doesn't trust AI stock yet.**
 
-A mobile app where a designer types what they need, finds a photo and buys it. Everywhere a designer needs a photo — `a website` (hero, section backgrounds, product shots), `a pitch deck`, `a mobile app design` (onboarding, empty states, cards), and `marketing materials` (ads, social, banners, email headers). Not a niche: every designer needs photos constantly.
+A mobile app where a designer types what they need, finds a photo and buys it. Designers need photos on almost everything they ship: `a website` (hero, section backgrounds, product shots), `a pitch` (the deck that has to look like a studio with a budget made it), `a mobile app design` (onboarding, empty states, cards), and `marketing materials` (ads, social, banners, email headers).
 
-Today that's two bad options: commission a shoot that costs a day and a few thousand and can't wait for the deadline, or grab `free stock` the client spots instantly.
+Today that's two bad options: commission a shoot, which costs a day and a few thousand and won't wait for the deadline, or grab `free stock` the client spots instantly.
 
-**The hard part is the objection underneath.** `AI stock` has a bad name — smooth, generic, wrong light, the same three faces. They've tried it and don't `believe` it. One screen has to convince someone already `sceptical`.
+**The hard part is the objection underneath.** `AI stock` has a bad name. Smooth, generic, wrong light, the same three faces. They've tried it and don't `believe` it. One screen has to convince someone who is already `sceptical`.
 
-That's the design brief: not a `gallery`, a `shop` that beats the objection before they scroll.
+That's the design brief: not a `gallery`. A `shop`. It has to convince a sceptic.
 
 `session-1.md` walks the room through seven steps:
 
