@@ -47,7 +47,11 @@ The arc: research on real data → several rough directions → one choice → a
 
 ## Session 2 — Make it sellable
 
-`session-2.md` is the last step: fill the image placeholders so the thing can actually be bought. Prompts out, images in, and the product stops being a wireframe.
+`session-2.md` is the last step: fill the image placeholders so the thing can actually be bought.
+
+Each placeholder gets a structured eight-section prompt, written for that slot's job — hero, grid card, curated set, category thumbnail. **The format is the deliverable**, and it's provider-neutral: paste it into Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, or a local model.
+
+If you want your agent to generate the images too, `/aimg` does that on Hermes — see `setup/aimg.md`. Optional; the session works without it.
 
 ---
 
@@ -63,6 +67,7 @@ setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
   mcp-config-examples.md      MCP config snippets for 6 agents
   verify.md                   health check
+  aimg.md                     optional /aimg image-generation shortcut (Hermes)
 
 assets/
   DESIGN.md            baseline design tokens — the source for Session 1 step 6

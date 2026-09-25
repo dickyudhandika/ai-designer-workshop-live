@@ -62,6 +62,16 @@ Missing tool in #2 → config points at the npm package. Empty #3 → plugin isn
 
 ---
 
+## Optional: `/aimg`
+
+If you're on Hermes and want to generate the Session 2 images rather than export prompts, tell your agent:
+
+> Check `setup/aimg.md` and confirm the `/aimg` image-generation skill is available.
+
+Skip this for any other agent — there is no `/aimg` to install outside Hermes. The prompt format in `session-2.md` is provider-neutral, so exporting prompts and pasting them into your own provider works everywhere.
+
+---
+
 ## Stop here
 
 Once all six pass, tell the human you're ready and wait. The rest of the workshop is driven by them from `session-1.md` and `session-2.md`.
