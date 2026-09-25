@@ -74,7 +74,7 @@ Add it alongside `figma-bridge` in the same `mcpServers` object. The URL is iden
 
 Then **fully restart the agent** again.
 
-Full detail, plus the fallback if nobody has a paid plan: `setup/mobbin.md`.
+Full detail: `setup/mobbin.md`.
 
 ## 7. Verify — primary tier, all seven must pass
 
@@ -152,4 +152,4 @@ Then it stops. It's told not to generate — not a placeholder, not a mock, not 
 
 Once the **seven primary checks** pass, tell the human you're ready and wait. Install `/aimg` only if they ask for it. The rest of the workshop is driven by them from `session-1.md` and `session-2.md`.
 
-More detail — Mobbin plans and the no-paid-plan fallback: `setup/mobbin.md`. Port conflicts, rebuild rules, symptom→fix table: `setup/install-figma-bridge.md` and `setup/verify.md`.
+More detail — Mobbin plans and the paid-plan requirement: `setup/mobbin.md`. Port conflicts, rebuild rules, symptom→fix table: `setup/install-figma-bridge.md` and `setup/verify.md`.
