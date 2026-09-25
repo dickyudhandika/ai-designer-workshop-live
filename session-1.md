@@ -10,24 +10,24 @@ Setup first: `AGENTS.md`, six checks passing.
 
 You're building an **AI photostock for designers**.
 
-**What it does.** A mobile app where a designer types what they need, finds a photo, and buys it. AI-generated, photoreal, licensed per image.
+**What it does.** A mobile app where a designer types what they need, finds a photo, and buys it. `AI photostock`, `photoreal`, `licensed per image`.
 
 **What it's for.** Everywhere a designer needs a photo:
 
-- **A website** — hero image, section backgrounds, product shots
-- **A pitch** — the deck that has to look like it came from a studio with a budget
-- **A mobile app design** — onboarding, empty states, cards, feature art
-- **Marketing materials** — ads, social posts, banners, email headers
+- `A website` — hero image, section backgrounds, product shots
+- `A pitch` — the deck that has to look like it came from a studio with a budget
+- `A mobile app design` — onboarding, empty states, cards, feature art
+- `Marketing materials` — ads, social posts, banners, email headers
 
 Which is the real argument: this isn't a niche for photographers. Every designer needs photos, constantly, on every surface they ship.
 
-**What they do today.** Two bad options. Commission a shoot — a day and a few thousand, and the deadline won't wait. Or grab free stock — fast, but the client spots it in half a second and the whole thing looks cheap.
+**What they do today.** Two bad options. Commission a shoot — a day and a few thousand, and the deadline won't wait. Or grab `free stock` — fast, but the client spots it in half a second and the whole thing looks `cheap`.
 
 **So they come here.** Describe the image, pay for it, use it today. The page looks like it came from a shoot they couldn't afford.
 
-**The hard part.** AI stock has a bad name — smooth, generic, wrong light, the same three faces. They've tried it before and don't believe it. The first screen has to convince someone who's already sceptical.
+**The hard part.** `AI stock` has a bad name — smooth, generic, wrong light, the same three faces. They've tried it before and don't `believe` it. The first screen has to convince someone who's already `sceptical`.
 
-**So the design has a job.** Not a gallery. A shop that makes a sceptic believe these images are good enough to put in front of a client.
+**So the design has a job.** Not a `gallery`. A `shop` that makes a sceptic believe these images are good enough to put in front of a client.
 
 **One idea holds the session together:** a design system is a contract, and you can watch an agent execute it against a real design tool. That happens at step 6.
 
