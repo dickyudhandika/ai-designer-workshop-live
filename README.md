@@ -13,7 +13,7 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 - **Figma desktop app** — required for dev plugin import
 - **Bun** — for building the Figma bridge ([bun.sh](https://bun.sh))
 - **Any MCP-capable AI agent**
-- **Mobbin MCP** — the research source for Session 1
+- **Mobbin MCP** — the research source for Session 1. Hosted, no build, no API key, but **needs a paid Pro or Team plan** — see [`setup/mobbin.md`](setup/mobbin.md)
 
 ---
 
@@ -31,7 +31,7 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 **Setup has two tiers**, both in `setup/verify.md`:
 
-- **Primary — required.** The Figma bridge: six checks. Nothing in Session 1 works until they all pass.
+- **Primary — required.** Seven checks: Mobbin connected (Session 1 step 2 dies without it), then the Figma bridge. Nothing in Session 1 works until they all pass.
 - **Optional — verified separately.** The `/aimg` skill (image prompts). Session 2 works without it.
 
 ---
@@ -82,8 +82,9 @@ session-2.md           run sheet: image prompts into placeholders
 
 setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
-  mcp-config-examples.md      MCP config snippets for 6 agents
-  verify.md                   verification, two tiers: primary (bridge) + optional (aimg)
+  mobbin.md                   Mobbin MCP — hosted, paid plan required, fallback if not
+  mcp-config-examples.md      MCP config snippets for 6 agents, both servers
+  verify.md                   verification, two tiers: primary (7 checks) + optional (aimg)
   aimg.md                     optional /aimg image-prompt skill (any agent)
 
 skills/

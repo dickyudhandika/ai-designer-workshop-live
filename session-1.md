@@ -2,7 +2,7 @@
 
 **A guideline, not a script.** Your agent executes; you drive. The steps are in order, the prompts are starting points — adapt them to what your agent actually gives back and to the room's mood.
 
-Setup first: `AGENTS.md`, six checks passing.
+Setup first: `AGENTS.md`, seven checks passing.
 
 ---
 
@@ -64,6 +64,8 @@ Mobile, not desktop — the product is a phone app, so the evidence has to be ph
 - **Describe one screen in plain language.** `"marketplace app home screen with photo grid and search bar"` works. A keyword pile like `"photo marketplace stock"` returns nothing.
 - **Keep the platform out of the query.** `platform` is a separate parameter — putting `ios` in the text degrades the match.
 - **One screen at a time.** Flows and multi-screen queries belong to `search_flows`, not here.
+
+**Check the connection before you rely on it.** Mobbin is a paid product on a remote server — if `[]` comes back for everything, it's almost always the plan or the OAuth, not your query. Run the check in `setup/mobbin.md` before you're on stage.
 
 > Search Mobbin for home screens whose whole job is showing a searchable grid of photographs. Start with something like: `marketplace app home screen with photo grid and search bar`, platform `ios`, limit 12.
 >
@@ -201,7 +203,8 @@ Adapt as you go. If the room is deep in the research, stay there. If they're imp
 
 | Problem | What to do |
 |---|---|
-| Mobbin returns `[]` for everything | Write up what you can verify, draw wireframes for the rest, label them `wireframe — capture unavailable`. Say so out loud. Never describe a screen from memory. |
+| Mobbin returns `[]` for everything | Check the plan first — Mobbin MCP needs Pro or Team, and a free account returns empty with no error. Then query shape. Then `setup/mobbin.md`. |
+| No Mobbin at all | Use the fallback in `setup/mobbin.md` — have the room bring screenshots, or search the public web and cite URLs. Draw wireframes for the rest, label them `wireframe — capture unavailable`. Say so out loud. Never describe a screen from memory. |
 | Figma bridge unreachable | Re-run the checks in `AGENTS.md`. It fails silently more often than loudly. |
 | A font won't load | Fall back to a serif you have installed |
 | Agent reports success but Figma looks wrong | Ask it to re-read the node and report actual bounds. A claim of success isn't evidence. |

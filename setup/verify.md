@@ -2,7 +2,7 @@
 
 Two tiers. **Primary is required** — both sessions depend on it. **Optional** adds conveniences, each verified separately.
 
-Work down the list. Don't start Session 1 until the primary tier passes end to end — a half-connected bridge fails silently and burns workshop time.
+Work down the list. Don't start Session 1 until the primary tier passes end to end — a half-connected server fails silently and burns workshop time.
 
 Have your agent run the MCP calls; run the shell commands yourself.
 
@@ -15,14 +15,44 @@ Everything in this tier must pass. Nothing in Session 1 works without it.
 ## 0. Prerequisite state
 
 - Fork cloned and built (`server/dist/index.js` exists) — see `install-figma-bridge.md`
-- MCP server added to your agent's config — see `mcp-config-examples.md`
+- **Both MCP servers** added to your agent's config — see `mcp-config-examples.md`
 - Agent restarted **after** the config edit
 - Figma **desktop** app open, a file open, plugin running
   (**Plugins → Development → Figma MCP Bridge**)
 
 ---
 
-## 1. Server process is alive
+## 1. Mobbin is connected
+
+**Do this first.** It gates Session 1 step 2, it's the dependency most likely to be missing, and it fails more quietly than anything else here — there's no process to inspect and a disconnected server returns the same empty array as a search that genuinely found nothing.
+
+### a. Tools are registered
+
+Ask your agent to list its MCP tools. Expected: `search_screens`, `search_flows`, `search_sections`.
+
+Missing → the agent didn't read the config. Check the file location in `mcp-config-examples.md`, then restart.
+
+### b. A real query returns real results
+
+> Search Mobbin for onboarding screens from banking apps. Tell me how many came back and name three of the apps.
+
+Expected: a count in the dozens, and three real app names.
+
+**Not** an empty array. **Not** an answer written from memory without calling the tool.
+
+### c. You're on a paid plan
+
+**Mobbin MCP requires Pro or Team. It is not on the free plan.**
+
+This is the trap: a free account adds the server, completes OAuth, and looks connected — then every query returns `[]` with no error. If 1b came back empty and your config and query are both fine, check your plan at [mobbin.com/pricing](https://mobbin.com/pricing).
+
+No paid plan? Session 1 has a fallback — `setup/mobbin.md`, section "If you don't have Mobbin". Decide which path you're on **before** the workshop, not during step 2.
+
+Full detail: `setup/mobbin.md`.
+
+---
+
+## 2. Server process is alive
 
 ```bash
 lsof -i :1994
@@ -36,7 +66,7 @@ then restart the agent.
 
 Running the fork on a different port? Check that port instead.
 
-## 2. Tools are registered
+## 3. Tools are registered
 
 Ask your agent to list its available MCP tools and confirm **all four** workshop
 tools are present:
@@ -49,7 +79,7 @@ tools are present:
 Missing any of them means you pointed the config at the stock npm package instead
 of the fork's `server/dist/index.js`. Fix the path and restart.
 
-## 3. Agent sees the file
+## 4. Agent sees the file
 
 Call **`list_files`**. Expected: JSON array with `fileKey` and `fileName` for each
 connected Figma file.
@@ -68,7 +98,7 @@ the file in Figma when convenient; the key changes and you re-run `list_files`.
 Multiple files open? Pass that `fileKey` explicitly to every subsequent call so the
 agent doesn't act on the wrong file.
 
-## 4. Reads work
+## 5. Reads work
 
 Call **`get_metadata`** with that `fileKey`. Expected: file name, the page list, and
 the current page.
@@ -76,7 +106,7 @@ the current page.
 Then call **`get_styles`**. Expected: whatever local styles the file already has
 (an empty-ish list on a fresh file is fine).
 
-## 5. Writes work — the two that matter
+## 6. Writes work — the two that matter
 
 Reading is upstream behaviour and almost always works. The fork's new tools are
 what Session 1 step 6 depends on, so test them now.
@@ -134,7 +164,7 @@ Got `"Inter could not be loaded"`? Your Figma session lacks the font. Fix with
 same failure mode Session 1 hits with `Fauna One` — that prompt documents the
 `Playfair Display` fallback. Seeing it here is useful.
 
-## 6. Screenshots land where expected
+## 7. Screenshots land where expected
 
 Call `save_screenshots` with the test frame's node ID. Note the `items` array shape:
 
@@ -156,7 +186,7 @@ ls -la /tmp/figma-verify.png
 
 ---
 
-**Primary tier complete?** Six checks, all passing. You can run the workshop.
+**Primary tier complete?** Seven checks, all passing. You can run the workshop.
 
 ---
 
@@ -190,7 +220,10 @@ Full detail: `setup/aimg.md`.
 
 | Symptom | Cause | Fix |
 | --- | --- | --- |
-| Port 1994 not listening | Server never started | Bad config path or agent not restarted. See step 1. |
+| Mobbin query returns `[]` | Free Mobbin plan | MCP needs Pro or Team. Free connects, then returns nothing. See step 1c. |
+| Mobbin tools missing | Config not read, or agent not restarted | Check the file location in `mcp-config-examples.md`, restart the agent. |
+| Mobbin browser window never appears | It opened behind the terminal | Alt-tab / check the editor. Re-run a query to retrigger the OAuth flow. |
+| Port 1994 not listening | Server never started | Bad config path or agent not restarted. See step 2. |
 | Tools missing / no `create_text_style` | Talking to the npm package | Point config at the fork's `server/dist/index.js`. |
 | `list_files` empty | Plugin not running | Open the file in Figma, Plugins → Development → Figma MCP Bridge. |
 | Two builds, one dead plugin | Stock bridge and fork fighting over port 1994 | Close the stock bridge and keep default 1994. Otherwise see the port notes in `install-figma-bridge.md`. |
