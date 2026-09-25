@@ -40,13 +40,13 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 **The brief: sell photos to designers, to a buyer who doesn't trust AI stock yet.**
 
-A mobile app where a designer types what they need, finds a photo and buys it. Everywhere a designer needs a photo — **a website** (hero, section backgrounds, product shots), **a pitch deck**, **a mobile app design** (onboarding, empty states, cards), and **marketing materials** (ads, social, banners, email headers). Not a niche: every designer needs photos constantly.
+A mobile app where a designer types what they need, finds a photo and buys it. Everywhere a designer needs a photo — `a website` (hero, section backgrounds, product shots), `a pitch deck`, `a mobile app design` (onboarding, empty states, cards), and `marketing materials` (ads, social, banners, email headers). Not a niche: every designer needs photos constantly.
 
-Today that's two bad options: commission a shoot that costs a day and a few thousand and can't wait for the deadline, or grab free stock the client spots instantly.
+Today that's two bad options: commission a shoot that costs a day and a few thousand and can't wait for the deadline, or grab `free stock` the client spots instantly.
 
-**The hard part is the objection underneath.** AI stock has a bad name — smooth, generic, wrong light, the same three faces. They've tried it and don't believe it. One screen has to convince someone already sceptical.
+**The hard part is the objection underneath.** `AI stock` has a bad name — smooth, generic, wrong light, the same three faces. They've tried it and don't `believe` it. One screen has to convince someone already `sceptical`.
 
-That's the design brief: not a gallery, a shop that beats the objection before they scroll.
+That's the design brief: not a `gallery`, a `shop` that beats the objection before they scroll.
 
 `session-1.md` walks the room through seven steps:
 
@@ -66,7 +66,7 @@ The arc: research on real data → several rough directions → one choice → a
 
 **Prompts, not images.** The agent writes the prompt and stops — generation, model choice and credits stay yours. The eight-section format is provider-neutral: Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, local.
 
-**Written to the brief, not to beauty.** The product promises imagery better than a designer could afford — an image that looks like free stock breaks the promise on the one screen meant to sell it.
+**Written to the brief, not to beauty.** The product's job is convincing a sceptic these images are good enough for a client's website — an image that looks like free stock breaks the promise on the one screen meant to sell it.
 
 Install the `/aimg` skill if you want your agent to scan a reference image into that format in one step — see `setup/aimg.md`. Works on any agent; optional.
 
