@@ -4,11 +4,14 @@ Add the figma-bridge MCP server to whichever agent you use. All examples point a
 the **fork's locally built server** — not the npm package, because the npm package
 lacks the token-authoring tools this workshop needs.
 
-**Replace `/absolute/path/to/figma-mcp-bridge` everywhere below** with the path
-you cloned the fork to. Verify the file exists first:
+**Clone the fork to `~/Downloads/figma-mcp-bridge` and build it first** — see
+`install-figma-bridge.md`. Every config below points at that build, because the npm
+package lacks the token-authoring tools this workshop needs.
+
+Replace `/Users/<you>` with your actual home directory. Verify the file exists first:
 
 ```bash
-ls /absolute/path/to/figma-mcp-bridge/server/dist/index.js
+ls ~/Downloads/figma-mcp-bridge/server/dist/index.js
 ```
 
 If that errors, build the fork — see `install-figma-bridge.md`.
@@ -28,7 +31,7 @@ File: `%APPDATA%\Claude\claude_desktop_config.json` (Windows)
   "mcpServers": {
     "figma-bridge": {
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
     }
   }
 }
@@ -39,14 +42,14 @@ Quit Claude Desktop completely and reopen it.
 ## Claude Code (CLI)
 
 File: `.mcp.json` in your project root (project scope), or run
-`claude mcp add figma-bridge -- node /absolute/path/to/figma-mcp-bridge/server/dist/index.js`
+`claude mcp add figma-bridge -- node /Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js`
 
 ```json
 {
   "mcpServers": {
     "figma-bridge": {
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
     }
   }
 }
@@ -62,7 +65,7 @@ File: `.cursor/mcp.json` in your project root (project scope) or
   "mcpServers": {
     "figma-bridge": {
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
     }
   }
 }
@@ -79,7 +82,7 @@ File: `~/.codeium/windsurf/mcp_config.json`
   "mcpServers": {
     "figma-bridge": {
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
     }
   }
 }
@@ -92,7 +95,7 @@ File: `~/.codex/config.toml`
 ```toml
 [mcp_servers.figma-bridge]
 command = "node"
-args = ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+args = ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
 ```
 
 ## VS Code / Copilot Chat
@@ -105,7 +108,7 @@ File: `.vscode/mcp.json` in your project root.
     "figma-bridge": {
       "type": "stdio",
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"]
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"]
     }
   }
 }
@@ -120,7 +123,7 @@ mcp_servers:
   figma-bridge:
     command: node
     args:
-      - /absolute/path/to/figma-mcp-bridge/server/dist/index.js
+      - /Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js
     enabled: true
 ```
 
@@ -136,7 +139,7 @@ port notes in `install-figma-bridge.md`). Add an env map to the server entry:
   "mcpServers": {
     "figma-bridge": {
       "command": "node",
-      "args": ["/absolute/path/to/figma-mcp-bridge/server/dist/index.js"],
+      "args": ["/Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js"],
       "env": {
         "FIGMA_BRIDGE_PORT": "1995"
       }
@@ -151,7 +154,7 @@ mcp_servers:
   figma-bridge:
     command: node
     args:
-      - /absolute/path/to/figma-mcp-bridge/server/dist/index.js
+      - /Users/<you>/Downloads/figma-mcp-bridge/server/dist/index.js
     env:
       FIGMA_BRIDGE_PORT: "1995"
     enabled: true

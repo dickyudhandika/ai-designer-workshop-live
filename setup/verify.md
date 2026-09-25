@@ -26,7 +26,7 @@ lsof -i :1994
 Expected: a `node` process listening on port 1994 (TCP, LISTEN).
 
 Nothing there? Your agent never spawned the server — usually a bad path in the MCP
-config. Confirm `ls /absolute/path/to/figma-mcp-bridge/server/dist/index.js` works,
+config. Confirm `ls ~/Downloads/figma-mcp-bridge/server/dist/index.js` works,
 then restart the agent.
 
 Running the fork on a different port? Check that port instead.
@@ -135,7 +135,7 @@ Call `save_screenshots` with the test frame's node ID. Note the `items` array sh
 
 ```json
 {
-  "items": [{ "nodeId": "<test frame nodeId>", "outputPath": "/absolute/path/to/ai-designer-workshop-live/output/figma/verify.png", "format": "PNG", "scale": 2 }],
+  "items": [{ "nodeId": "<test frame nodeId>", "outputPath": "/Users/<you>/Documents/monetization/halodesigner-talk-AI-Assistant/Repo/output/figma/verify.png", "format": "PNG", "scale": 2 }],
   "fileKey": "<your fileKey>"
 }
 ```

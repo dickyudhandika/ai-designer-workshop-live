@@ -30,15 +30,17 @@ bun --version
 ## 2. Clone the fork
 
 ```bash
+cd ~/Downloads
 git clone -b feat/create-text-style https://github.com/dickyudhandika/figma-mcp-bridge.git
 cd figma-mcp-bridge
 ```
 
-Remember the absolute path — every MCP config needs it:
+**Clone it to `~/Downloads/figma-mcp-bridge` exactly.** Every MCP config and command
+in this repo assumes that path:
 
 ```bash
 pwd
-# e.g. /Users/you/code/figma-mcp-bridge
+# /Users/<you>/Downloads/figma-mcp-bridge
 ```
 
 ## 3. Install root dependencies
@@ -86,9 +88,9 @@ only knows about files where the plugin is running.
 
 ## 7. Add the MCP server to your agent
 
-See `mcp-config-examples.md`. Point it at the **absolute** path to
-`server/dist/index.js` from step 4, then restart your agent (a full restart, not
-just a config reload, for most agents).
+See `mcp-config-examples.md`. Point it at the absolute path to
+`~/Downloads/figma-mcp-bridge/server/dist/index.js` from step 4, then restart your agent
+(a full restart, not just a config reload, for most agents).
 
 ## 8. Verify
 
