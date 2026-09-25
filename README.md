@@ -1,130 +1,93 @@
 # AI Designer Workshop — Live
 
-Run a live design workshop where your AI agent researches competitors on Mobbin, renders that research into Figma, assigns design tokens to the same Figma file, builds a photo marketplace homepage, and generates image prompts — all in real time.
+Two sessions. Your AI agent researches, renders into Figma, assigns design tokens, builds and iterates a product — while the room watches.
 
-Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo and it runs the full workshop end-to-end.
-
----
-
-## The use case, and why the references differ
-
-Session 1 **builds a photo marketplace app** — a mobile homepage where people browse and buy photographs.
-
-Phase 1 **studies image-grid marketplace apps** — Depop, Etsy, Vinted, Vestiaire Collective, Nextdoor.
-
-Those are deliberately two different things. Of the ten obvious stock-photo brands (Shutterstock, Getty, Unsplash, Pexels, Adobe Stock, iStock, EyeEm, Alamy, Depositphotos, Dreamstime), **one** has usable app screens on Mobbin. Researching that list produces a near-empty page.
-
-So the workshop studies the apps that already solved the design problem the photo marketplace has: **a mobile homepage whose entire job is to show a grid of photographs and let you search it.** Depop and Etsy solved a harder version — their grids carry price, brand, size and condition on top of the image. Inherit from them; build the photo marketplace.
+Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo. It installs the tooling first, then you drive both sessions by reading the files below and telling it what to do.
 
 ---
 
-## What you need
+## Prerequisites
 
-- **Figma desktop app** (required for dev plugin import)
-- **Any MCP-capable AI agent** — Claude Code, Codex, Cursor, Hermes, Windsurf, VS Code Copilot
-- **Bun** installed ([bun.sh](https://bun.sh))
-- **figma-mcp-bridge fork** — cloned and built (see `setup/`)
-
-Optional but better:
-- **Mobbin MCP** — the research source for Session 1 Phase 1. Supplies real app screens for the image-grid marketplace references. **Mobbin is the only research path** — if it is down, Phase 1 degrades to wireframes rather than falling back to web search.
+- **Figma desktop app** — required for dev plugin import
+- **Bun** — for building the Figma bridge ([bun.sh](https://bun.sh))
+- **Any MCP-capable AI agent**
+- **Mobbin MCP** — the research source for Session 1
 
 ---
 
-## Quick start
+## Run order
 
 ```
 1. Open this folder in your agent.
-2. Say: "Read AGENTS.md and run the workshop."
-3. Follow the pauses — the agent stops between phases for your input.
+2. Say: "Read AGENTS.md and set up the workshop."
+3. Let it install and verify the Figma bridge. It will stop when ready.
+4. Read session-1.md and drive your agent through it.
+5. Read session-2.md and drive your agent through it.
 ```
 
-That's it. The agent reads `AGENTS.md`, installs the bridge, configures MCP, and runs both sessions.
+`AGENTS.md` is install-only — it stops and waits once the bridge is verified. Every step after that is yours to call.
 
 ---
 
-## Agenda
+## Session 1 — Build an AI photostock for designers
 
-### Setup (15 min)
+**Case study: a polished AI photostock product for the next design project.**
 
-Install the figma-mcp-bridge fork, configure MCP for your agent, verify the connection. See `setup/` for step-by-step instructions covering 6 agents.
+`session-1.md` walks the room through seven steps:
 
-### Session 1 — Photo Marketplace Homepage (45 min)
+1. Frame the case study
+2. Research layouts with Mobbin via MCP
+3. Pick 1–3 references you love — with reasons
+4. Merge the concepts and go lo-fi: 1–4 quick variations
+5. Pick the best one
+6. Assign your design tokens to it
+7. Inspect what the tokens improved and what they broke
 
-| Phase | Time | What happens |
-|---|---|---|
-| **Phase 1: Research** | 10 min | Agent queries Mobbin `search_screens` for **image-grid marketplace apps** (Depop, Etsy, Vinted…), extracts them into 7 capped fields, then renders the research as a `Research` page in Figma — one card per reference with a real app screen. You pick 1 as the design reference for the photo marketplace homepage. |
-| **Phase 2: Token Assignment** | 10 min | Agent reads `assets/DESIGN.md` and pushes real design tokens into Figma — variable collections, color swatches, named text styles. **This is the "wow" moment** — watch tokens appear live in Figma's sidebar. |
-| **Phase 3: Build + Iterate** | 25 min | Agent builds the **mobile** homepage (390px frame) using the assigned tokens. Iterates 4-5 times, screenshotting and evaluating each pass against the chosen reference's app screen. Logs every iteration. |
+The arc: research on real data → several rough directions → one choice → a real token system applied to it. By step 7 the room sees the difference tokens make, on a design they watched get built.
 
-### Session 2 — Image Prompts for Placeholders (15 min)
+## Session 2 — Make it sellable
 
-Agent reads the Figma file, finds all image placeholder frames, and crafts structured image prompts using the 8-section template. Output is copy-pasteable — paste into your preferred image provider (Midjourney, DALL-E, FAL, whatever).
+`session-2.md` is the last step: fill the image placeholders so the thing can actually be bought. Prompts out, images in, and the product stops being a wireframe.
 
 ---
 
 ## Repo layout
 
 ```
-AGENTS.md              ← agent entry point (the conductor)
-README.md              ← this file
+AGENTS.md              install-only — Figma bridge setup + verification
+README.md              this file
+session-1.md           run sheet: research → lo-fi → tokens
+session-2.md           run sheet: images into placeholders
 
-setup/                 one-time install + MCP config
-  install-figma-bridge.md    clone fork, bun build, import Figma plugin
-  mcp-config-examples.md     config snippets for 6 agents
-  verify.md                  health check (list_files, port 1994)
+setup/                 install detail
+  install-figma-bridge.md     clone fork, bun build, import Figma plugin
+  mcp-config-examples.md      MCP config snippets for 6 agents
+  verify.md                   health check
 
 assets/
-  DESIGN.md            baseline design tokens (colors, typography, spacing, components)
+  DESIGN.md            baseline design tokens — the source for Session 1 step 6
 
-session-1/             photo marketplace homepage
-  phase-1-research.md        competitor research via Mobbin: markdown report → Figma Research page
-  phase-2-tokens.md          push DESIGN.md tokens to Figma via MCP
-  phase-3-build-iterate.md   build homepage + iterate 4-5x
-  report-template.md         Phase 1 output format + Figma render contract (7 capped fields,
-                             portrait node tree, 312×708 slot) — mirrors the markdown AND the Figma page
-  iteration-log-template.md  Phase 3 log format
-
-session-2/             image prompts for placeholders
-  image-prompt-template.md   8-section structured prompt format
-  generate-prompts.md        agent: find placeholders → craft prompts
-
-examples/              what "good" looks like — read before producing
-  research/                  example competitor analysis (image-grid marketplace apps)
-  figma/                     example adapted DESIGN.md + iteration log
-  images/                    example image prompts for 4 placeholder slots
-
-output/                live session artifacts (gitignored)
-  research/                  agent-written reports
-    screens/                   Mobbin app-screen captures per reference
-  figma/                     screenshots, iteration logs, token exports
-  images/                    generated image prompts
+output/                scratch artifacts (gitignored)
 ```
 
-**Figma pages this workshop creates:**
-
-| Page | Phase | Contents |
-|---|---|---|
-| `Research` | 1 | One card per reference (name, app screen, 7 capped fields, accent-panel works/weak), `Cross-App Patterns`, `Recommendation`, `Chosen` |
-| `Design System` | 2 | `Colors` variable collection + 9 variables, `Color Swatches`, named text styles, `Typography Scale` |
-
-`examples/` is read-only reference. `output/` is scratch — safe to wipe between workshops.
+`assets/DESIGN.md` is the token source. It is not a template — it is the contract the agent executes against Figma in step 6.
 
 ---
 
 ## The fork
 
-This workshop uses [`dickyudhandika/figma-mcp-bridge`](https://github.com/dickyudhandika/figma-mcp-bridge) (branch `feat/create-text-style`), not the upstream `gethopp/figma-mcp-bridge`.
+This workshop uses [`dickyudhandika/figma-mcp-bridge`](https://github.com/dickyudhandika/figma-mcp-bridge) (branch `feat/create-text-style`), not upstream `gethopp/figma-mcp-bridge`.
 
-The fork adds 4 tools the upstream lacks:
+The fork adds 4 tools the npm package lacks:
 
-| Tool | Why we need it |
+| Tool | Why |
 |---|---|
 | `create_variable_collection` | Create Figma variable collections (design tokens) |
 | `create_variables` | Batch-create color variables as hex strings |
-| `set_bound_variable` | Bind variables to node fields (fill, radius, etc.) |
-| `create_text_style` | Create named Figma text styles (H1, Body, Label, etc.) |
+| `set_bound_variable` | Bind variables to node fields (fill, radius, padding, …) |
+| `create_text_style` | Create named Figma text styles |
 
-Without these, Phase 2 can't push real tokens — you'd get visual swatches only, not actual Figma variables and styles.
+Without these, step 6 can only draw swatches — not real Figma variables and styles.
 
 ---
 
