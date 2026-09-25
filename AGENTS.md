@@ -62,13 +62,49 @@ Missing tool in #2 → config points at the npm package. Empty #3 → plugin isn
 
 ---
 
-## Optional: `/aimg`
+## Optional: install the `/aimg` skill
 
-If you're on Hermes and want to generate the Session 2 images rather than export prompts, tell your agent:
+Install this **before Session 2** if you want your agent to turn a reference image into a reusable prompt, or to generate the Session 2 images itself. Session 2 works either way — skip it and you'll paste prompts into your own provider by hand.
 
-> Check `setup/aimg.md` and confirm the `/aimg` image-generation skill is available.
+The skill ships in this repo at `skills/aimg/SKILL.md`. Plain `SKILL.md`, no build step.
 
-Skip this for any other agent — there is no `/aimg` to install outside Hermes. The prompt format in `session-2.md` is provider-neutral, so exporting prompts and pasting them into your own provider works everywhere.
+### Install it
+
+Say this to your agent:
+
+> Install the `/aimg` skill. Copy `skills/aimg/` from this repo into your own skills folder, then confirm you can see it.
+
+`~/.agents/skills/` is the cross-agent convention — Codex, Cursor, Gemini CLI and most skill loaders read it directly:
+
+```bash
+mkdir -p ~/.agents/skills && cp -R "$(pwd)/skills/aimg" ~/.agents/skills/aimg
+```
+
+Some agents only scan their own folder. Symlink it across instead — Claude Code and Cursor both follow symlinks, so one copy stays the source of truth:
+
+```bash
+ln -sfn ~/.agents/skills/aimg ~/.claude/skills/aimg    # Claude Code
+ln -sfn ~/.agents/skills/aimg ~/.cursor/skills/aimg    # Cursor
+ln -sfn ~/.agents/skills/aimg ~/.codex/skills/aimg     # Codex
+```
+
+**Hermes** already keeps its own at `~/.hermes/skills/devops/aimg/`.
+
+Then restart the agent so it picks the skill up.
+
+### What it makes your agent do
+
+Hand it a reference image and say *"scan this into a prompt"*. The skill guides it through three steps:
+
+1. **Copy the image** — read the actual pixels, not a remembered description.
+2. **Scan it** against the eight-section format: `TYPE & SUBJECT`, `SUBJECT ACTION`, `ENVIRONMENT`, `LIGHTING`, `CAMERA`, `TEXTURE & PROPS`, `STYLE KEYWORDS`, `CONSTRAINTS`.
+3. **Copy the whole filled block to the clipboard** (`pbcopy`), ready to paste into Midjourney, Nano Banana, or whatever you use.
+
+It's told not to generate in that step — scan, hand back the block, stop.
+
+Second job: given a prompt it generates the image, saves it to `~/Downloads`, and puts the path on the clipboard. It never fabricates — if generation fails it reports the real error instead of handing you a placeholder.
+
+Full details: `setup/aimg.md`.
 
 ---
 

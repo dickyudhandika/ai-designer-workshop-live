@@ -67,7 +67,10 @@ setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
   mcp-config-examples.md      MCP config snippets for 6 agents
   verify.md                   health check
-  aimg.md                     optional /aimg image-generation shortcut (Hermes)
+  aimg.md                     optional /aimg image-prompt skill (any agent)
+
+skills/
+  aimg/SKILL.md        portable SKILL.md — scan image → 8-section prompt → clipboard
 
 assets/
   DESIGN.md            baseline design tokens — the source for Session 1 step 6
