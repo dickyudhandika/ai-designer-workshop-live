@@ -93,7 +93,7 @@ No text. No logos. No watermarks. No shape distortion.
 - **`[CONSTRAINTS]` is not boilerplate.** It's the line that stops the model putting signage on your architecture and a brand mark on your laptop. These are stock images — embedded text makes them unsellable.
 - **Vary deliberately.** If two slots would naturally get the same subject, change season, time of day, or framing. A grid of five near-identical photos reads as one photo repeated.
 
-**Why this format travels:** it's an **image-analysis** template as much as a generation one. The same eight sections describe a photo you already have — so the room can point it at a reference image and get a reusable prompt out, not just a one-off.
+If your agent has the `/aimg` skill installed (see `setup/aimg.md`), hand it a reference image and ask it to scan that image into a prompt — you get the filled eight-section block on your clipboard. Otherwise point it at any of the eight sections and adapt by hand.
 
 **What good looks like:** every prompt is self-contained. Paste it into any provider with zero edits and it means something.
 
@@ -107,7 +107,7 @@ No text. No logos. No watermarks. No shape distortion.
 
 > Generate each image and place it into its placeholder in Figma. Keep the slot dimensions exactly — don't crop to fit, and don't change the layout.
 
-**Hermes users:** the `/aimg` skill does this — invoke it with the prompt and it returns the generated image path for you to drop into the frame. See `setup/aimg.md`.
+**With the `/aimg` skill installed** (see `setup/aimg.md` — works on any agent), invoke it with the prompt and it hands back the image path, ready to drop into the frame.
 
 ### Option B — no image tool
 

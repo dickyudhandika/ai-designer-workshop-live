@@ -51,7 +51,7 @@ The arc: research on real data → several rough directions → one choice → a
 
 Each placeholder gets a structured eight-section prompt, written for that slot's job — hero, grid card, curated set, category thumbnail. **The format is the deliverable**, and it's provider-neutral: paste it into Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, or a local model.
 
-If you want your agent to generate the images too, `/aimg` does that on Hermes — see `setup/aimg.md`. Optional; the session works without it.
+If you want your agent to write those prompts from a reference image, or generate the images itself, install the `/aimg` skill — see `setup/aimg.md`. Works on any agent; optional either way.
 
 ---
 
