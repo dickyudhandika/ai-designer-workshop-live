@@ -110,7 +110,7 @@ No text. No logos. No watermarks. No shape distortion.
 
 ## Step 3 — Collect the prompts
 
-> Put every prompt in one place: `output/images/prompts.md`. Name each one after its slot — hero, card-1, collection, category-travel — and say which section of the design it belongs to.
+> Put every prompt in one place: `prompts.md` at the repo root. Name each one after its slot — hero, card-1, collection, category-travel — and say which section of the design it belongs to.
 >
 > Return the full set as a single copy-paste block too, so I can grab it without opening the file.
 
@@ -140,7 +140,7 @@ Fix one prompt together, on screen. Cheapest possible place to catch a bad brief
 
 ## Done when
 
-- Every placeholder in the chosen frame has a prompt in `output/images/prompts.md`
+- Every placeholder in the chosen frame has a prompt in `prompts.md`
 - Every prompt has all eight sections, in order
 - Prompts are self-contained — pasteable into any provider with no edits
 - Collection and category slots were written as coherent sets, not one-offs

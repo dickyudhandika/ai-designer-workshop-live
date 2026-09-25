@@ -135,7 +135,7 @@ Call `save_screenshots` with the test frame's node ID. Note the `items` array sh
 
 ```json
 {
-  "items": [{ "nodeId": "<test frame nodeId>", "outputPath": "/Users/<you>/Documents/monetization/halodesigner-talk-AI-Assistant/Repo/output/figma/verify.png", "format": "PNG", "scale": 2 }],
+  "items": [{ "nodeId": "<test frame nodeId>", "outputPath": "/tmp/figma-verify.png", "format": "PNG", "scale": 2 }],
   "fileKey": "<your fileKey>"
 }
 ```
@@ -144,8 +144,10 @@ Call `save_screenshots` with the test frame's node ID. Note the `items` array sh
 own working directory (the fork clone), not this repo. Then confirm the file exists:
 
 ```bash
-ls -la output/figma/verify.png
+ls -la /tmp/figma-verify.png
 ```
+
+`/tmp` keeps the check throwaway — nothing lands in the repo. Delete it when done.
 
 ---
 

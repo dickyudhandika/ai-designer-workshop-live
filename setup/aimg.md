@@ -117,4 +117,4 @@ Each section answers a question the model would otherwise guess at:
 
 Paste the skill body into your agent's context and say *"follow this when I hand you an image."* It's markdown — that's the whole skill.
 
-Or skip it entirely: ask your agent to write the prompts per slot and collect them in `output/images/prompts.md`. That's Session 2 without the skill, and it's a complete result.
+Or skip it entirely: ask your agent to write the prompts per slot and collect them in `prompts.md`. That's Session 2 without the skill, and it's a complete result.

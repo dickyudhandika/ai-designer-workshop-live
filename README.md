@@ -47,7 +47,7 @@ The arc: research on real data → several rough directions → one choice → a
 
 ## Session 2 — Make it sellable
 
-`session-2.md` is the last step: every image placeholder gets a written prompt, collected in `output/images/prompts.md`, ready to paste into your own provider.
+`session-2.md` is the last step: every image placeholder gets a written prompt, collected in `prompts.md`, ready to paste into your own provider.
 
 **Prompts, not images.** The agent writes the prompt and stops — generation, model choice and credits stay yours. The eight-section format is provider-neutral: Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, local.
 
@@ -61,7 +61,7 @@ Install the `/aimg` skill if you want your agent to scan a reference image into 
 AGENTS.md              install-only — Figma bridge setup + verification
 README.md              this file
 session-1.md           run sheet: research → lo-fi → tokens
-session-2.md           run sheet: images into placeholders
+session-2.md           run sheet: image prompts into placeholders
 
 setup/                 install detail
   install-figma-bridge.md     clone fork, bun build, import Figma plugin
@@ -74,8 +74,6 @@ skills/
 
 assets/
   DESIGN.md            baseline design tokens — the source for Session 1 step 6
-
-output/                scratch artifacts (gitignored)
 ```
 
 `assets/DESIGN.md` is the token source. It is not a template — it is the contract the agent executes against Figma in step 6.

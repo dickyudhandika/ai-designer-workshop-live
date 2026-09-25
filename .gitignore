@@ -1,6 +1,5 @@
-# Audience work — local only
-output/*
-!output/**/.gitkeep
+# Session 2 output — local, the audience pastes it into their own provider
+prompts.md
 
 # OS
 .DS_Store
