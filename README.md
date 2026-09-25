@@ -1,6 +1,6 @@
 # AI Designer Workshop — Live
 
-Two sessions. Your AI agent researches, renders into Figma, assigns design tokens, builds and iterates a product — while the room watches.
+Two sessions. You drive an AI agent: research with Mobbin, lo-fi directions, Figma tokens, then image prompts.
 
 The product is an **AI photostock for designers**: a mobile app where a designer types what they need, finds a photo and buys it — for a website, a pitch deck, a mobile app design, or marketing materials. Every designer needs photos; this is where they get them. That commercial job is the brief the whole session designs against — and the hard part is that AI stock has a bad reputation your buyer already believes.
 
