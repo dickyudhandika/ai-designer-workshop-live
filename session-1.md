@@ -12,11 +12,14 @@ You're building an **AI photostock for designers**.
 
 **What it does.** A mobile app where a designer types what they need, finds a photo, and buys it. AI-generated, photoreal, licensed per image.
 
-**What it's for.** Three places a designer needs photos all the time:
+**What it's for.** Everywhere a designer needs a photo:
 
 - **A website** — hero image, section backgrounds, product shots
 - **A pitch** — the deck that has to look like it came from a studio with a budget
 - **A mobile app design** — onboarding, empty states, cards, feature art
+- **Marketing materials** — ads, social posts, banners, email headers
+
+Which is the real argument: this isn't a niche for photographers. Every designer needs photos, constantly, on every surface they ship.
 
 **What they do today.** Two bad options. Commission a shoot — a day and a few thousand, and the deadline won't wait. Or grab free stock — fast, but the client spots it in half a second and the whole thing looks cheap.
 
@@ -40,7 +43,7 @@ Before anything is researched, say what's being built and who it's for. This ste
 
 > We're designing an AI photostock for designers — a mobile app where you type what you need, find a photo, and buy it.
 >
-> **What it's for:** three places a designer needs photos all the time — a website (hero, section backgrounds, product shots), a pitch deck, and a mobile app design (onboarding, empty states, cards).
+> **What it's for:** everywhere a designer needs a photo — a website (hero, section backgrounds, product shots), a pitch deck, a mobile app design (onboarding, empty states, cards), and marketing materials (ads, social posts, banners). Not a niche — every designer needs photos constantly, on everything they ship.
 >
 > **What it replaces:** commissioning a shoot, which costs a day and a few thousand and can't wait for the deadline. Or free stock, which the client spots instantly and which makes the whole thing look cheap.
 >

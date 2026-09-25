@@ -2,7 +2,7 @@
 
 Two sessions. Your AI agent researches, renders into Figma, assigns design tokens, builds and iterates a product — while the room watches.
 
-The product is an **AI photostock for designers**: a mobile app where a designer types what they need, finds a photo and buys it — for a website, a pitch deck, or a mobile app design. That commercial job is the brief the whole session designs against — and the hard part is that AI stock has a bad reputation your buyer already believes.
+The product is an **AI photostock for designers**: a mobile app where a designer types what they need, finds a photo and buys it — for a website, a pitch deck, a mobile app design, or marketing materials. Every designer needs photos; this is where they get them. That commercial job is the brief the whole session designs against — and the hard part is that AI stock has a bad reputation your buyer already believes.
 
 Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo. It installs the tooling first, then you drive both sessions by reading the files below and telling it what to do.
 
@@ -40,7 +40,7 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 
 **The brief: sell photos to designers, to a buyer who doesn't trust AI stock yet.**
 
-A mobile app where a designer types what they need, finds a photo and buys it. A designer needs photos constantly in three places — **a website** (hero, section backgrounds, product shots), **a pitch deck**, and **a mobile app design** (onboarding, empty states, cards).
+A mobile app where a designer types what they need, finds a photo and buys it. Everywhere a designer needs a photo — **a website** (hero, section backgrounds, product shots), **a pitch deck**, **a mobile app design** (onboarding, empty states, cards), and **marketing materials** (ads, social, banners, email headers). Not a niche: every designer needs photos constantly.
 
 Today that's two bad options: commission a shoot that costs a day and a few thousand and can't wait for the deadline, or grab free stock the client spots instantly.
 
