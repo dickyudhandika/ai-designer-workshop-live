@@ -4,7 +4,7 @@
 
 Session 1 ended with a chosen variation: a real token system applied to a real design. It looks like a product.
 
-It isn't one yet. Every image on it is a gray rectangle — and the brief promised a designer that these images look commissioned.
+It isn't one yet. Every image on it is a gray rectangle — and the brief promised the buyer images good enough to use.
 
 ---
 
@@ -23,7 +23,7 @@ The agent's job ends at the prompt. Two reasons:
 - **Generation is your choice, not the agent's.** Model, style, credits, licence, resolution — those are decisions a person makes.
 - **A good prompt travels.** It survives being pasted anywhere. A generated image is one output of it, and one you can always redo.
 
-**Write for the brief, not for beauty.** The product's whole job is convincing a sceptic that these images are commissioned quality. Every prompt here has to earn that — an image that looks like free stock breaks the promise on the one screen that's supposed to sell it.
+**Write for the brief, not for beauty.** The product's whole job is convincing a sceptic that these images are good enough to put in a client's website. Every prompt here has to earn that — an image that looks like free stock breaks the promise on the one screen that's supposed to sell it.
 
 **Time:** ~15 min. Find placeholders · write prompts · collect · review.
 
@@ -97,7 +97,7 @@ No text. No logos. No watermarks. No shape distortion.
 
 > For each placeholder, write a prompt using these eight sections in this order. Ground each one in what's actually next to the slot — the card title, the category name.
 >
-> The product's job is convincing a sceptical designer that these images look commissioned. Write to that. Nothing here should read as stock filler.
+> The product's job is convincing a sceptical designer these images are good enough for a client's website. Write to that. Nothing here should read as stock filler.
 >
 > For the collection band and the category row, write them as one set: same light direction, same colour temperature, same camera treatment. A collection that looks like five different photographers isn't a collection.
 >

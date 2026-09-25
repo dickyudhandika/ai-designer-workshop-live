@@ -10,19 +10,21 @@ Setup first: `AGENTS.md`, six checks passing.
 
 You're building an **AI photostock for designers**.
 
-**The product.** A mobile app where a designer searches, browses and buys AI-generated imagery. Photoreal, on-brief, licensed per image.
+**What it does.** A mobile app where a designer types what they need, finds a photo, and buys it. AI-generated, photoreal, licensed per image.
 
-**Who buys it.** A freelance designer with a pitch due. Their fee depends on winning the work, and the winning happens in the proposal — the concepts, the mockups, the hero shot. That's where they're up against studios who have a photo budget.
+**What it's for.** Three places a designer needs photos all the time:
 
-**What they do now.** Commission a shoot: a day and a few thousand, and the pitch usually can't wait. Or reach for free stock — and the client reads it in half a second, and the whole proposal drops a tier.
+- **A website** — hero image, section backgrounds, product shots
+- **A pitch** — the deck that has to look like it came from a studio with a budget
+- **A mobile app design** — onboarding, empty states, cards, feature art
 
-**So they buy images to raise the price of their work.** Not because photography is expensive. Because the proposal has to look like it came from the studio with the budget, and theirs doesn't yet.
+**What they do today.** Two bad options. Commission a shoot — a day and a few thousand, and the deadline won't wait. Or grab free stock — fast, but the client spots it in half a second and the whole thing looks cheap.
 
-**The promise.** The images in their proposal look commissioned. Same day, at a rounding error against the shoot.
+**So they come here.** Describe the image, pay for it, use it today. The page looks like it came from a shoot they couldn't afford.
 
-**The objection you have to beat — this is the hard part.** They've been burned. AI stock looks like AI stock: smooth, generic, wrong light, the same three faces. A designer who tried it once does not believe the promise, and free tiers taught them not to pay for it.
+**The hard part.** AI stock has a bad name — smooth, generic, wrong light, the same three faces. They've tried it before and don't believe it. The first screen has to convince someone who's already sceptical.
 
-**So the design has a job.** Not a gallery. It's a shop that has to convince someone who is already sceptical — on the first screen they open — that these images will hold up in front of a client. Every decision in this session answers that. Hold it in the room's head and steps 2 to 7 stop being preferences and start being arguments.
+**So the design has a job.** Not a gallery. A shop that makes a sceptic believe these images are good enough to put in front of a client.
 
 **One idea holds the session together:** a design system is a contract, and you can watch an agent execute it against a real design tool. That happens at step 6.
 
@@ -36,19 +38,17 @@ It's a worked example. Swap the product if a different one fits your room better
 
 Before anything is researched, say what's being built and who it's for. This steers every later decision, so it's worth saying out loud rather than assuming.
 
-> We're designing an AI photostock for designers — a mobile app where you search, browse and buy AI-generated images.
+> We're designing an AI photostock for designers — a mobile app where you type what you need, find a photo, and buy it.
 >
-> **Who buys:** a freelance designer with a pitch due. Their fee depends on winning the work, and the work gets won in the proposal — against studios who have a photo budget.
+> **What it's for:** three places a designer needs photos all the time — a website (hero, section backgrounds, product shots), a pitch deck, and a mobile app design (onboarding, empty states, cards).
 >
-> **What it replaces:** a shoot that costs a day and a few thousand and can't wait for the deadline. Or free stock that makes the whole proposal look cheap.
+> **What it replaces:** commissioning a shoot, which costs a day and a few thousand and can't wait for the deadline. Or free stock, which the client spots instantly and which makes the whole thing look cheap.
 >
-> **The promise:** the images in their proposal look commissioned, same day, for almost nothing next to the shoot.
->
-> **The hard part:** they've been burned. AI stock looks like AI stock, and free tiers taught them not to pay for it. So this screen has to convince someone sceptical.
+> **The hard part:** AI stock has a bad name — smooth, generic, wrong light, the same three faces. They've tried it and don't believe it. So this screen has to convince someone sceptical.
 >
 > Home screen has to sell, not display. It's a shop, not a gallery. Treat this as a real product brief — everything we build today goes in one Figma file.
 
-**What good looks like:** the agent can state back who buys this, what it replaces, and the objection it has to beat. If it only says "an app for browsing images", the brief was too thin — say it again with the commercial job in it.
+**What good looks like:** the agent can state back what the app does, what it replaces, and the objection it has to beat. If it only says "an app for browsing images", the brief was too thin — say it again with the jobs in it.
 
 ---
 
@@ -106,10 +106,10 @@ Don't clone one reference. Merge the best decisions from your picks into a direc
 >
 > Each one takes a different position on **why a sceptical buyer trusts this**:
 >
-> - **proof-led** — the work is undeniable: big image, price next to it, nothing to hide
+> - **proof-led** — show the work: big image, price next to it, nothing to hide
 > - **curation-led** — hand-picked sets, art-directed like an agency, taste as the guarantee
-> - **discovery-led** — search is the whole product: type what the brief needs, get it in one tap
-> - **deal-led** — risk is the block, so remove it: first image free, credits, no lock-in
+> - **discovery-led** — search-first: type what the website or deck needs, get it in one tap
+> - **deal-led** — remove the risk: first image free, credits, no lock-in
 >
 > Name them A–D and put them side by side so I can compare.
 
@@ -127,7 +127,7 @@ Look at them together. Pick one, and say why it won.
 
 > I'm picking [X]. Tell me why it's the strongest of the four, and what you'd fix in it.
 
-**Pick the one that sells, not the one that's prettiest.** The test is the brief: a designer who's seen AI stock disappoint before lands on this screen — does this one beat the objection? If your pick wins on taste but doesn't answer "why should I believe these images", you picked the gallery.
+**Pick the one that sells, not the one that's prettiest.** The test is the brief: a designer who's been let down by AI stock before lands on this screen — does this one beat the objection? If your pick wins on taste but doesn't answer "why should I believe these images", you picked the gallery.
 
 Everything after this happens to that frame only.
 
@@ -180,7 +180,7 @@ Two things to look for:
 
 If you find something like that, it's the lesson to land: **the token system doesn't make the design good, it makes the mistakes visible.** Then ask the room: fix the token, or fix the rule?
 
-**Then connect it back to the money.** A grey that measures 2.52:1 isn't a technicality — it's a screen that looks cheap, in a product whose only job is convincing a sceptic the work is premium. The token was the design system's own claim, and the measurement says the claim was false. That's the same failure as the product's own promise: it says "commissioned quality", and if the screen says "template", nobody pays. Ask the room which findings a buyer would actually feel.
+**Then connect it back to the point.** A grey that measures 2.52:1 isn't a technicality — it's a screen that looks cheap, in a product whose only job is convincing a sceptic the work is good enough to put in a client's website. Nobody pays for a template look. Ask the room which findings a buyer would actually feel.
 
 **What good looks like:** at least one thing named as improved and one thing named as broken or exposed — with a number attached to the second.
 
