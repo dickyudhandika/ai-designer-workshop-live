@@ -2,7 +2,9 @@
 
 Optional, and installable on **any agent** — Codex, Claude Code, Cursor, Windsurf, Hermes.
 
-Session 2 works without it. But with it, your agent can take a reference image and hand you back a reusable eight-section prompt on the clipboard, or generate the images itself.
+It turns a reference image into a reusable eight-section prompt, and puts the block on your clipboard.
+
+**It does not generate images.** That's deliberate — see below.
 
 ---
 
@@ -10,19 +12,25 @@ Session 2 works without it. But with it, your agent can take a reference image a
 
 A plain **`SKILL.md`** — the Agent Skills format. No build step, no package to install. It ships in this repo at [`skills/aimg/SKILL.md`](../skills/aimg/SKILL.md).
 
-Two jobs:
+Three steps, and then it stops:
 
-| Job | You do this | You get back |
-|---|---|---|
-| **Scan** | Attach a reference image, say *"scan this into a prompt"* | The filled eight-section format, on your clipboard |
-| **Generate** | Give it a prompt | The image at `~/Downloads`, path on your clipboard |
+1. **Look at the image** — read the actual pixels, not a remembered description.
+2. **Scan it** against the eight sections, in order.
+3. **Copy the whole filled block to the clipboard** (`pbcopy`), ready to paste into your provider.
 
-**The scan job is the useful one.** A reference photo in, a prompt you can reuse out — that's the format travelling, not just an image.
+No generation step. Not a placeholder, not a mock, not an SVG stand-in.
 
-Two behaviours worth knowing:
+---
 
-- It **copies the newest generated image to `~/Downloads`** and returns that path — no hunting through a cache directory.
-- It **refuses to fabricate.** No placeholder, mock, SVG, or PIL stand-in. If the provider fails, it reports the real error instead of handing you a fake. That matters in a live session: a named failure beats a fake success.
+## Why prompts and not images
+
+Because the prompt is the asset and generation is your call.
+
+- **Generation is a decision, not a task.** Model, style, credits, licence, resolution, how many attempts. A person makes those calls.
+- **A prompt travels; an image doesn't.** The same block works in Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, or a local model. Change provider tomorrow and the prompt still holds.
+- **Prompts are reviewable before they cost anything.** Best place to catch a bad brief is before someone spends credits on it.
+
+The format is one template used two ways: describe an image you already have, or specify one you want. Same eight sections either way.
 
 ---
 
@@ -44,27 +52,17 @@ ln -sfn ~/.agents/skills/aimg ~/.cursor/skills/aimg    # Cursor
 ln -sfn ~/.agents/skills/aimg ~/.codex/skills/aimg     # Codex
 ```
 
-**Hermes** keeps its skills at `~/.hermes/skills/devops/aimg/` and invokes `/aimg` as a slash command.
+**Hermes** keeps its skills at `~/.hermes/skills/devops/aimg/`.
 
 Then **restart the agent** so it picks the skill up.
 
-### Requirements for the generate job
-
-The scan job needs nothing but vision. Generation needs a configured image provider.
-
-Hermes:
-
-```bash
-hermes config get image_gen
-```
-
-Empty → generation has nowhere to go. Scan still works; use Session 2 Option B and paste the prompts into your own provider.
+No image provider needed. The scan job is vision only — nothing to configure.
 
 ---
 
 ## The prompt format it uses
 
-Eight sections, in this order. The same template works for **analysis and generation** — which is why it's worth keeping.
+Eight sections, in this order. The same template works for **analysis and specification** — which is why it's worth keeping.
 
 ```text
 [PHOTOGRAPHY TYPE & SUBJECT] :
@@ -111,7 +109,7 @@ Each section answers a question the model would otherwise guess at:
 | `STYLE KEYWORDS` | drifts between attempts |
 | `CONSTRAINTS` | invents text, logos, warped shapes |
 
-**Provider-neutral on purpose.** The output is text, so it pastes into Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, or a local model with zero edits.
+**Provider-neutral on purpose.** The output is text, so it pastes anywhere with zero edits.
 
 ---
 
@@ -119,4 +117,4 @@ Each section answers a question the model would otherwise guess at:
 
 Paste the skill body into your agent's context and say *"follow this when I hand you an image."* It's markdown — that's the whole skill.
 
-Or skip it entirely: ask your agent to write the prompts and export them to `output/images/prompts.md`. That's Session 2 Option B, and it's a complete result.
+Or skip it entirely: ask your agent to write the prompts per slot and collect them in `output/images/prompts.md`. That's Session 2 without the skill, and it's a complete result.

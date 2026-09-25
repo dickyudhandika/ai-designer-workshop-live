@@ -1,39 +1,29 @@
 ---
 name: aimg
-description: Use when the user invokes /aimg, hands over a reference image to turn into a prompt, or needs the structured image-prompt format (PHOTOGRAPHY TYPE & SUBJECT, SUBJECT ACTION, ENVIRONMENT, LIGHTING, CAMERA, TEXTURE & PROPS, STYLE KEYWORDS, CONSTRAINTS).
+description: Use when the user hands over a reference image to turn into a reusable prompt, or asks for the structured image-prompt format (PHOTOGRAPHY TYPE & SUBJECT, SUBJECT ACTION, ENVIRONMENT, LIGHTING, CAMERA, TEXTURE & PROPS, STYLE KEYWORDS, CONSTRAINTS).
 ---
 
 # aimg
 
-Two jobs, and the analysis one comes first:
+**Scan an image. Return a prompt. That's the job.**
 
-1. **Scan an image** and return the filled eight-section prompt format.
-2. **Generate an image** from a prompt.
+This skill does not generate images. It reads a reference image and produces the filled eight-section prompt format, ready to paste into whatever image provider the user already uses — Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, a local model.
 
-The format is the asset. A generated image is one output of it.
+The prompt is the deliverable. A generated image is one output of it, and that choice belongs to the person, not the agent.
 
-## Job 1 — scan an image into a prompt
+## What to do
 
-Use when the user supplies an image (a file path, a pasted image, a screenshot) and wants a prompt from it, or asks to recover the format.
+When the user supplies an image — a file path, a pasted image, a screenshot — and wants a prompt from it, or asks for the format:
 
-1. **Look at the image.** Describe only what is actually in it. Never invent a subject the image doesn't show.
+1. **Look at the image.** Read the actual pixels. Describe only what is really in it; never invent a subject the image doesn't show.
 2. **Fill all eight sections, in order.** Keep the bracket labels verbatim so the block stays greppable and re-usable.
 3. **Return it as one copy-paste code block**, nothing wrapped around it.
-4. **Copy the whole block to the clipboard** with `pbcopy` so the user can paste it straight into their image provider.
-5. Do **not** generate an image in this job, even if generation is available. Scan, hand back the block, stop.
+4. **Copy the whole block to the clipboard** with `pbcopy` so it can be pasted straight into the user's image provider.
+5. **Stop.** Do not generate an image, even if you have a generation tool available. Scan, hand back the block, done.
 
 If the user asks only for the empty template, return the template block — not a filled one.
 
-## Job 2 — generate
-
-Use when the user gives a prompt and asks for an image.
-
-- Treat the user's text after `/aimg` as the generation prompt.
-- Generate with the configured image provider/model.
-- Copy the result into `~/Downloads` and reply with the final file path only.
-- **Never fabricate.** No placeholder, mock, SVG, or PIL stand-in if generation fails. Report the real error concisely instead.
-- No prompt supplied → ask for one.
-- No generation tool available → say so and hand back the prompt block instead. That is still a complete answer.
+If the user asks you to generate an image, say plainly that this skill writes prompts rather than images, and hand back the prompt block so they can take it to their own provider.
 
 ## The format
 
@@ -75,19 +65,16 @@ List strict rules to preserve the subject and keep it usable (no text, no logos,
 | `STYLE KEYWORDS` | drifts between attempts |
 | `CONSTRAINTS` | invents text, logos, warped shapes |
 
+The output is text, so it pastes into any provider with zero edits.
+
 ## Rules
 
 - **Scanning beats guessing.** If an image is on screen, read it. Never describe a photo from memory or imagination.
 - **`CONSTRAINTS` is load-bearing**, not boilerplate — it's the line that keeps a stock image sellable.
-- **Clipboard after every output** (macOS): `printf '%s' "<block or path>" | pbcopy`. For an image, copy the **path**, never the bytes. Skip silently on non-macOS; a clipboard failure must never fail the response.
-- **Concise.** The block and the path, no commentary unless asked.
-- Shell paths: use a fully expanded absolute path or `"$HOME/Downloads/..."`. Single-quoted `$HOME` does not expand.
+- **Clipboard after every output** (macOS): `printf '%s' "<block>" | pbcopy`. Skip silently on non-macOS; a clipboard failure must never fail the response.
+- **Concise.** The block, no commentary unless asked.
+- **No generation, no fallbacks.** Not a placeholder, not a mock, not an SVG or PIL stand-in. If the user wants an image, the prompt is what you give them.
 
 ## Output
 
-Scan → the filled format block, on the clipboard.
-Generate → the file path, on the clipboard.
-
-```text
-/Users/you/Downloads/your-image.png
-```
+The filled format block, on the clipboard.

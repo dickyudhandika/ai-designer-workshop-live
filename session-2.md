@@ -1,4 +1,4 @@
-# Session 2 — Make it sellable
+# Session 2 — Write the image prompts
 
 **A guideline, not a script.** The agent executes; you drive.
 
@@ -12,11 +12,18 @@ It isn't one yet. Every image on it is a gray rectangle.
 
 A placeholder is **a design intent that was never written down.** Right now the design says "an image goes here" and nothing more. Nobody can buy that.
 
-This session turns each slot into a written prompt — then, if your tooling allows, into an image.
+This session turns each slot into a written prompt.
 
-**The prompt format is the deliverable, not the image.** Any image provider can consume it: Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, a local model. A good prompt survives being pasted anywhere; a generated image is one output of it.
+**We write prompts. We do not generate images.**
 
-**Time:** ~15 min. Find placeholders · write prompts · generate or export · review.
+That's the whole point of the session — the prompt is the deliverable. Your agent writes the prompts and hands them to you; you take them to whatever image provider you already use: Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, a local model.
+
+The agent's job ends at the prompt. Two reasons:
+
+- **Generation is your choice, not the agent's.** Model, style, credits, licence, resolution — those are decisions a person makes.
+- **A good prompt travels.** It survives being pasted anywhere. A generated image is one output of it, and one you can always redo.
+
+**Time:** ~15 min. Find placeholders · write prompts · export · review.
 
 ---
 
@@ -34,7 +41,7 @@ This session turns each slot into a written prompt — then, if your tooling all
 
 ## Step 2 — Write a prompt per slot
 
-**Four kinds of slot want four different images.** This is the part worth explaining to the room — a hero and a grid card are not the same brief.
+**Four kinds of slot want four different prompts.** This is the part worth explaining to the room — a hero and a grid card are not the same brief.
 
 | Slot | Read it as | The prompt leans toward |
 |---|---|---|
@@ -87,68 +94,64 @@ No text. No logos. No watermarks. No shape distortion.
 > For each placeholder, write a prompt using these eight sections in this order. Ground each one in what's actually next to the slot — the card title, the category name.
 >
 > For the collection band and the category row, write them as one set: same light direction, same colour temperature, same camera treatment. A collection that looks like five different photographers isn't a collection.
+>
+> Write the prompts only. Do not generate any images. I'll take them to my own provider.
 
 **Two rules that matter more than the rest:**
 
 - **`[CONSTRAINTS]` is not boilerplate.** It's the line that stops the model putting signage on your architecture and a brand mark on your laptop. These are stock images — embedded text makes them unsellable.
 - **Vary deliberately.** If two slots would naturally get the same subject, change season, time of day, or framing. A grid of five near-identical photos reads as one photo repeated.
 
-If your agent has the `/aimg` skill installed (see `setup/aimg.md`), hand it a reference image and ask it to scan that image into a prompt — you get the filled eight-section block on your clipboard. Otherwise point it at any of the eight sections and adapt by hand.
+**Reading a reference instead of inventing one.** If you already have a photo whose look you want, hand it to your agent and ask it to describe *that image* in the same eight sections. You get a prompt grounded in something real rather than a guess. With the `/aimg` skill installed (see `setup/aimg.md`) it's a single step — scan the image, return the filled block.
 
 **What good looks like:** every prompt is self-contained. Paste it into any provider with zero edits and it means something.
 
 ---
 
-## Step 3 — Generate — or export
+## Step 3 — Collect the prompts
 
-**Pick whichever fits your tooling. Both are a success.**
+> Put every prompt in one place: `output/images/prompts.md`. Name each one after its slot — hero, card-1, collection, category-travel — and say which section of the design it belongs to.
+>
+> Return the full set as a single copy-paste block too, so I can grab it without opening the file.
 
-### Option A — your agent has an image tool
+One file, one block. The file is the record; the block is for grabbing on stage.
 
-> Generate each image and place it into its placeholder in Figma. Keep the slot dimensions exactly — don't crop to fit, and don't change the layout.
+**Nothing gets generated here.** If your agent offers to make the images, say no — you're taking the prompts to your own provider afterward. If it produces an image anyway, that's a deviation worth naming out loud.
 
-**With the `/aimg` skill installed** (see `setup/aimg.md` — works on any agent), invoke it with the prompt and it hands back the image path, ready to drop into the frame.
-
-### Option B — no image tool
-
-> Export the prompts to `output/images/prompts.md` so I can paste them into my own provider.
-
-Copy-pasteable prompts are the full deliverable. Take them to Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, whatever you use — the format is provider-neutral on purpose.
-
-**Do this live if you can.** Watching gray boxes turn into photographs is the payoff of the whole workshop: the same frame the room watched get researched, structured and tokenized is now a product.
-
-**If generation fails,** say so and export the prompts. Do not accept a placeholder image, a mock, or an SVG stand-in passed off as a generation — a named failure is worth more than a fake success.
+**What good looks like:** N placeholders in, N named prompts out, all eight sections each.
 
 ---
 
-## Step 4 — Look at it as a buyer
+## Step 4 — Review the set
 
-> Screenshot the finished frame and tell me: does this look like something you'd pay for?
+> Read the prompts back to me as a set. Do they look like one product, or like eight unrelated photos?
 
 Three questions for the room:
 
-1. **Do the images hold together** — or does it look like five different photographers?
-2. **Does anything fight the tokens** — an image that makes text unreadable, a colour that clashes with the one accent?
-3. **Is the product obvious** — can a designer tell what they'd be buying at a glance?
+1. **Do these hold together** — or does the set read like five different photographers?
+2. **Would anything fight the tokens** when the image lands — a photo that makes text unreadable, a colour that clashes with the one accent?
+3. **Is the product obvious** — from the prompts alone, can you tell what a designer would be buying?
 
-Anything broken here is a real finding. Fix one thing together, on screen.
+Fix one prompt together, on screen. Cheapest possible place to catch a bad brief — before anyone spends a credit on it.
 
-**What good looks like:** at least one thing still doesn't work, and you both know why.
+**What good looks like:** at least one prompt still isn't right, and you both know why.
 
 ---
 
 ## Done when
 
-- Every placeholder in the chosen frame is either filled with an image, or has a prompt in `output/images/prompts.md`
+- Every placeholder in the chosen frame has a prompt in `output/images/prompts.md`
 - Every prompt has all eight sections, in order
 - Prompts are self-contained — pasteable into any provider with no edits
 - Collection and category slots were written as coherent sets, not one-offs
-- The room has seen the frame go from gray boxes to photographs (or knows exactly why not)
-- You've named at least one thing that still doesn't work
+- **No images were generated** — the deliverable is the prompt set
+- You've named at least one prompt that still isn't right
 
 ---
 
 ## Where this goes next
+
+Take the prompts to your provider of choice and see the gray boxes become photographs. That part is yours, not the agent's.
 
 The same loop on a real project: research with evidence, several rough directions, one choice, tokens assigned, then real content. The AI photostock was a case study — the shape of the workflow is the product.
 

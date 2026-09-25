@@ -47,11 +47,11 @@ The arc: research on real data → several rough directions → one choice → a
 
 ## Session 2 — Make it sellable
 
-`session-2.md` is the last step: fill the image placeholders so the thing can actually be bought.
+`session-2.md` is the last step: every image placeholder gets a written prompt, collected in `output/images/prompts.md`, ready to paste into your own provider.
 
-Each placeholder gets a structured eight-section prompt, written for that slot's job — hero, grid card, curated set, category thumbnail. **The format is the deliverable**, and it's provider-neutral: paste it into Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, or a local model.
+**Prompts, not images.** The agent writes the prompt and stops — generation, model choice and credits stay yours. The eight-section format is provider-neutral: Midjourney, Nano Banana, DALL·E, FAL, Ideogram, Firefly, local.
 
-If you want your agent to write those prompts from a reference image, or generate the images itself, install the `/aimg` skill — see `setup/aimg.md`. Works on any agent; optional either way.
+Install the `/aimg` skill if you want your agent to scan a reference image into that format in one step — see `setup/aimg.md`. Works on any agent; optional.
 
 ---
 

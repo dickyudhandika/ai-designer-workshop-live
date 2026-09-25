@@ -64,7 +64,9 @@ Missing tool in #2 → config points at the npm package. Empty #3 → plugin isn
 
 ## Optional: install the `/aimg` skill
 
-Install this **before Session 2** if you want your agent to turn a reference image into a reusable prompt, or to generate the Session 2 images itself. Session 2 works either way — skip it and you'll paste prompts into your own provider by hand.
+Install this if you want your agent to turn a reference image into a reusable prompt. Skip it and your agent can still write prompts from the design — this just makes the reference-image route one step.
+
+**It writes prompts. It does not generate images** — that stays your call, and you take the prompts to your own provider.
 
 The skill ships in this repo at `skills/aimg/SKILL.md`. Plain `SKILL.md`, no build step.
 
@@ -90,19 +92,17 @@ ln -sfn ~/.agents/skills/aimg ~/.codex/skills/aimg     # Codex
 
 **Hermes** already keeps its own at `~/.hermes/skills/devops/aimg/`.
 
-Then restart the agent so it picks the skill up.
+Then restart the agent so it picks the skill up. There's nothing else to configure — no image provider needed.
 
 ### What it makes your agent do
 
-Hand it a reference image and say *"scan this into a prompt"*. The skill guides it through three steps:
+Hand it a reference image and say *"scan this into a prompt"*. Three steps:
 
-1. **Copy the image** — read the actual pixels, not a remembered description.
+1. **Look at the image** — read the actual pixels, not a remembered description.
 2. **Scan it** against the eight-section format: `TYPE & SUBJECT`, `SUBJECT ACTION`, `ENVIRONMENT`, `LIGHTING`, `CAMERA`, `TEXTURE & PROPS`, `STYLE KEYWORDS`, `CONSTRAINTS`.
 3. **Copy the whole filled block to the clipboard** (`pbcopy`), ready to paste into Midjourney, Nano Banana, or whatever you use.
 
-It's told not to generate in that step — scan, hand back the block, stop.
-
-Second job: given a prompt it generates the image, saves it to `~/Downloads`, and puts the path on the clipboard. It never fabricates — if generation fails it reports the real error instead of handing you a placeholder.
+Then it stops. It's told not to generate — not a placeholder, not a mock, not an SVG stand-in.
 
 Full details: `setup/aimg.md`.
 
