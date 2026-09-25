@@ -1,8 +1,20 @@
 # AI Designer Workshop — Live
 
-Run a live design workshop where your AI agent researches competitors, assigns design tokens to Figma, builds a photo marketplace homepage, and generates image prompts — all in real time.
+Run a live design workshop where your AI agent researches competitors on Mobbin, renders that research into Figma, assigns design tokens to the same Figma file, builds a photo marketplace homepage, and generates image prompts — all in real time.
 
 Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at this repo and it runs the full workshop end-to-end.
+
+---
+
+## The use case, and why the references differ
+
+Session 1 **builds a photo marketplace app** — a mobile homepage where people browse and buy photographs.
+
+Phase 1 **studies image-grid marketplace apps** — Depop, Etsy, Vinted, Vestiaire Collective, Nextdoor.
+
+Those are deliberately two different things. Of the ten obvious stock-photo brands (Shutterstock, Getty, Unsplash, Pexels, Adobe Stock, iStock, EyeEm, Alamy, Depositphotos, Dreamstime), **one** has usable app screens on Mobbin. Researching that list produces a near-empty page.
+
+So the workshop studies the apps that already solved the design problem the photo marketplace has: **a mobile homepage whose entire job is to show a grid of photographs and let you search it.** Depop and Etsy solved a harder version — their grids carry price, brand, size and condition on top of the image. Inherit from them; build the photo marketplace.
 
 ---
 
@@ -14,7 +26,7 @@ Spawn any MCP-capable agent (Claude Code, Codex, Cursor, Hermes, Windsurf) at th
 - **figma-mcp-bridge fork** — cloned and built (see `setup/`)
 
 Optional but better:
-- **Mobbin MCP** — for real competitor app screens (if unavailable, agent falls back to Google search)
+- **Mobbin MCP** — the research source for Session 1 Phase 1. Supplies real app screens for the image-grid marketplace references. **Mobbin is the only research path** — if it is down, Phase 1 degrades to wireframes rather than falling back to web search.
 
 ---
 
@@ -40,9 +52,9 @@ Install the figma-mcp-bridge fork, configure MCP for your agent, verify the conn
 
 | Phase | Time | What happens |
 |---|---|---|
-| **Phase 1: Research** | 10 min | Agent researches 4-5 photo marketplace competitors (Mobbin or Google). Produces a pattern analysis report. You pick 1 as the design reference. |
+| **Phase 1: Research** | 10 min | Agent queries Mobbin `search_screens` for **image-grid marketplace apps** (Depop, Etsy, Vinted…), extracts them into 7 capped fields, then renders the research as a `Research` page in Figma — one card per reference with a real app screen. You pick 1 as the design reference for the photo marketplace homepage. |
 | **Phase 2: Token Assignment** | 10 min | Agent reads `assets/DESIGN.md` and pushes real design tokens into Figma — variable collections, color swatches, named text styles. **This is the "wow" moment** — watch tokens appear live in Figma's sidebar. |
-| **Phase 3: Build + Iterate** | 25 min | Agent builds the homepage using the assigned tokens. Iterates 4-5 times, screenshotting and evaluating each pass against the competitor reference. Logs every iteration. |
+| **Phase 3: Build + Iterate** | 25 min | Agent builds the **mobile** homepage (390px frame) using the assigned tokens. Iterates 4-5 times, screenshotting and evaluating each pass against the chosen reference's app screen. Logs every iteration. |
 
 ### Session 2 — Image Prompts for Placeholders (15 min)
 
@@ -65,10 +77,11 @@ assets/
   DESIGN.md            baseline design tokens (colors, typography, spacing, components)
 
 session-1/             photo marketplace homepage
-  phase-1-research.md        competitor research (Mobbin or Google)
+  phase-1-research.md        competitor research via Mobbin: markdown report → Figma Research page
   phase-2-tokens.md          push DESIGN.md tokens to Figma via MCP
   phase-3-build-iterate.md   build homepage + iterate 4-5x
-  report-template.md         Phase 1 output format
+  report-template.md         Phase 1 output format + Figma render contract (7 capped fields,
+                             portrait node tree, 312×708 slot) — mirrors the markdown AND the Figma page
   iteration-log-template.md  Phase 3 log format
 
 session-2/             image prompts for placeholders
@@ -76,15 +89,23 @@ session-2/             image prompts for placeholders
   generate-prompts.md        agent: find placeholders → craft prompts
 
 examples/              what "good" looks like — read before producing
-  research/                  example competitor analysis (Shutterstock, Unsplash, Getty, Adobe Stock, Pexels)
+  research/                  example competitor analysis (image-grid marketplace apps)
   figma/                     example adapted DESIGN.md + iteration log
   images/                    example image prompts for 4 placeholder slots
 
 output/                live session artifacts (gitignored)
   research/                  agent-written reports
+    screens/                   Mobbin app-screen captures per reference
   figma/                     screenshots, iteration logs, token exports
   images/                    generated image prompts
 ```
+
+**Figma pages this workshop creates:**
+
+| Page | Phase | Contents |
+|---|---|---|
+| `Research` | 1 | One card per reference (name, app screen, 7 capped fields, accent-panel works/weak), `Cross-App Patterns`, `Recommendation`, `Chosen` |
+| `Design System` | 2 | `Colors` variable collection + 9 variables, `Color Swatches`, named text styles, `Typography Scale` |
 
 `examples/` is read-only reference. `output/` is scratch — safe to wipe between workshops.
 

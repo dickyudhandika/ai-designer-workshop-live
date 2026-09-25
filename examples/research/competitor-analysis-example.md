@@ -1,115 +1,106 @@
-# Photo Marketplace Competitor Analysis
+# Image-Grid Marketplace Competitor Analysis (Mobile)
 
-**Example output.** This is what a completed Phase 1 report looks like — specific observations, named competitors, cross-app patterns, one clear recommendation. Your agent's live report will differ in wording but should match this structure and this level of specificity.
+Example output — the content standard. This is what a completed Phase 1 report reads like.
 
-Format reference: `session-1/report-template.md`
+> **Why these five?** Session 1 builds a **photo marketplace app**. The references are **image-grid
+> marketplace apps**, because that is where the mobile evidence actually lives: one of ten named
+> stock-photo brands has usable app screens on Mobbin, while image-grid marketplaces are everywhere.
+> Same design problem — a mobile homepage showing a searchable grid of photographs — far better
+> evidence. Every field below is filled from a real screen.
+
+**Source:** Mobbin `search_screens`, `platform: ios`
+**Probe query:** `"marketplace app home screen with photo grid and search bar"`
+**Capture:** app screens at Mobbin native 1179×2676 (1:2.270)
+**Date:** 2026-09-24
 
 ---
 
 ## Competitors Found
 
-### 1. Unsplash — free, community-driven, photographer-first
-- URL: https://unsplash.com
-- Layout: Full-bleed edge-to-edge photo grid directly under a slim nav. No hero band, no marketing chrome. Photos start ~80px from the top of the viewport.
-- Navigation: Single-row nav — logo left, five text links, "Submit an image" + "Log in" right. No mega-menu, no dropdowns.
-- Color usage: Effectively monochrome. White canvas, near-black text, one subtle gray for secondary. Colour comes entirely from the photographs — the UI never competes.
-- Typography: One sans family. Large regular-weight wordmark. Grid card titles are small and quiet — photographer name in a lighter gray than the title.
-- Primary action: "Submit an image" in the nav. Contributor model — the primary ask is contribution, not purchase.
-- Grid type: Masonry, mixed aspect ratios, variable column height. Density is high — 4–5 columns at desktop width.
-- Search prominence: High. Search is a full-width input centered in the nav, the single widest element on the page.
-- Filters: Appear as a horizontal row of category chips beneath the nav ("Editorial", "Wallpapers", "Nature", …). Sort control sits right-aligned above the grid.
-- What works: Photos-forward to the point of erasing the interface — the product *is* the grid. Category chips give browsing without a click into a filter panel.
-- What's weak: No editorial framing anywhere. A first-time visitor gets no explanation of what Unsplash is or how licensing works — that content lives three clicks away.
+### 1. Depop — second-hand fashion, community-led
+- URL: https://www.depop.com
+- Capture: app screen
+- Layout: Top bar: full-width search field + camera, heart, bag icons. A greeting, "Hey Sam!", then a 2-column product grid. No hero, no campaign band — the grid is the page.
+- Nav & search: Search is a full-width field in the top bar, always visible, never collapsed to an icon. Bottom tab bar: Home, Discover, Sell (raised, centre), Inbox, My Depop.
+- Grid: 2 columns, uniform cards, tight gutters. Price, brand and size sit on every tile.
+- Primary action: "Sell" — the raised centre button in the bottom tab bar.
+- Mobile pattern: Greeting-led home feed: "Hey Sam!" personalises the top of the page and the grid follows immediately. Bottom tab bar with a raised centre Sell button — the only commerce action in the thumb zone.
+- Works: Grid-first — no promo band, no hero. Photographs start within the first 120px and stay the subject of the page.
+- Weak: The search field carries no scope control — one field for sellers, brands and items alike.
 
-### 2. Shutterstock — paid, professional, enterprise-leaning
-- URL: https://www.shutterstock.com
-- Layout: Dense vertical stack — nav, search hero band, category row, then a mixed grid of collections and individual assets. Several distinct content bands before the first photo grid.
-- Navigation: Two-tier. Utility row (language, pricing, "Sell your content") above a main row of category links with dropdown carets.
-- Color usage: Red primary against white — the brand accent is used generously on CTAs, badges, and pricing tags. Busier than the free competitors.
-- Typography: One sans family throughout, heavier weights. Card titles are denser and carry more metadata (asset type, contributor tier).
-- Primary action: "Get 10 free images" / pricing CTA in the hero band. Buyer model — the ask is a plan, not a contribution.
-- Grid type: Uniform-ish grid with occasional featured tiles spanning two columns. More regular than Unsplash, less rigid than a fixed card grid.
-- Search prominence: Very high. Search is the hero band — a large input with a secondary filter dropdown ("Images", "Videos", "Music") attached to it.
-- Filters: Persistent filter panel on the left of the results view; on the homepage, category tiles function as the filter entry point.
-- What works: Metadata density — every card shows enough for a buyer to qualify the asset without opening it. Search-first framing matches buyer intent.
-- What's weak: Cluttered by comparison. The photo grid doesn't start until well down the page, so the actual product is buried under merchandising bands.
+### 2. Vinted — second-hand fashion, mass-market
+- URL: https://www.vinted.com
+- Capture: app screen
+- Layout: Search field, then category tabs (All / Designer / Electronics), then a personalisation banner, then "Recommended for you" above a 2-column grid.
+- Nav & search: Search field pinned at the top, category tabs directly beneath it. Bottom tab bar: Home, Search, Sell, Inbox, Profile — Home active.
+- Grid: 2 columns, mixed item ratios, price with "incl." and condition labels on each tile.
+- Primary action: "Personalize" inside the banner — set sizes and brands to filter the feed.
+- Mobile pattern: Category tabs directly under the search field: scope is visible and switchable without opening anything. Bottom tab bar with Search promoted to a first-class tab beside Home.
+- Works: Search and category tabs share the top block, so scoping the catalogue costs no extra tap target.
+- Weak: A full-width promo banner sits above the first product — the marketplace is sold to before it is shown.
 
-### 3. Pexels — free, discovery-led, editorial-ish presentation
-- URL: https://www.pexels.com
-- Layout: Nav, then a large search-led hero band, then a category chip row, then a full-width masonry grid. Close to Unsplash but with a heavier hero.
-- Navigation: Single-row nav — logo, four text links, "Upload" + "Join" right. Simpler than Shutterstock, slightly heavier than Unsplash.
-- Color usage: White canvas with a teal/green accent used sparingly on links and the primary CTA. Mostly restrained — photos carry the colour.
-- Typography: One sans family. Wordmark is bold; card titles are small and low-contrast. Similar hierarchy to Unsplash.
-- Primary action: "Upload" (contributor) alongside "Join" (account). Both present, neither dominant — no single loud CTA.
-- Grid type: Masonry with mixed ratios. Slightly lower density than Unsplash — larger cards, more space between columns.
-- Search prominence: High. Search input sits in the hero band area, wider than in the nav-only pattern.
-- Filters: Category chips under the hero plus a set of curated "Popular searches" links. Sort control above the grid.
-- What works: Category chips are large and photographic themselves — browsing feels visual rather than taxonomic. Popular-search links shorten the path to a usable query.
-- What's weak: Hero band eats vertical space without saying anything the grid doesn't already say. The dual CTA splits attention.
+### 3. Vestiaire Collective — luxury resale, editorial
+- URL: https://www.vestiairecollective.com
+- Capture: app screen
+- Layout: "Now Trending" with a horizontal card carousel, then "Dreaming of Dresses" as a second band. Editorial sections rather than one flat grid.
+- Nav & search: Top bar: bell, full-width search field ("Search for items, members…"), bag. Bottom tab bar: Home, Shop, Sell, Favourites, Me.
+- Grid: Horizontal carousels of large cards, not a fixed column grid. Prices sit on the card's lower edge.
+- Primary action: "View all" under each band — the escape hatch from a curated rail to the full list.
+- Mobile pattern: Horizontal carousel bands instead of a vertical grid: several curated rails stacked, each with its own "View all". Search is still pinned full-width in the top bar.
+- Works: Luxury reads as editorial — fewer, larger photographs per screen and generous whitespace. The images carry the value.
+- Weak: No dense grid anywhere on the home screen — only two or three items are visible per band, so browsing is slow.
 
-### 4. Getty Images — paid, editorial/agency, premium positioning
-- URL: https://www.gettyimages.com
-- Layout: Heavy nav, large hero band with a rotating editorial feature, then curated collection rows, then a grid. The most content bands before the first raw grid of all five.
-- Navigation: Two-tier with a prominent utility row. Multiple dropdown menus, long category taxonomy.
-- Color usage: Black-and-white-dominant with a bright accent on CTAs. Deliberately restrained — reads as premium rather than commercial.
-- Typography: One sans family, editorial weight and spacing. Larger headline type than any other competitor surveyed.
-- Primary action: Search, plus a subscription/pricing CTA. Editorial-first — the hero promotes a curated story, not a plan.
-- Grid type: Mixed — editorial collection rows (uniform hero tiles) followed by a more irregular results grid further down.
-- Search prominence: Highest of the five by measure — a very wide search input at the top of the hero with an inline media-type selector.
-- Filters: Deep. Date, licence type, orientation, collection, and colour filters. Overkill on the homepage, appropriate in results.
-- What works: Editorial curation is a genuine differentiator — the homepage tells a story rather than dumping a catalogue. Premium restraint in colour reads as authority.
-- What's weak: The most cluttered above-the-fold of all five. Filter depth is intimidating for a casual visitor and mostly dead weight on the homepage.
+### 4. Etsy — handmade and vintage marketplace
+- URL: https://www.etsy.com
+- Capture: app screen
+- Layout: Search field with a concrete example placeholder, then a promo banner, then "Shop by category" tiles, then "Home Decor" as a curated row.
+- Nav & search: Search is the first element on the page and its placeholder carries a live example query. Bottom tab bar: Home, Search, Favorites, You, Cart — Home active.
+- Grid: Mixed: 2x2 product tiles inside named sections plus a small category-tile row. Not one continuous grid.
+- Primary action: "Explore more" beside each section heading, and "Get this gift" on the banner.
+- Mobile pattern: Search field first with an example placeholder, then category navigation, then curated product rows. Every section is labelled and carries its own "Explore more".
+- Works: The search placeholder shows a real example query — it teaches what the catalogue contains before you type.
+- Weak: Category tiles and editorial sections push the actual product grid below the first screen.
 
-### 5. Adobe Stock — paid, bundled, Creative-Cloud-integrated
-- URL: https://stock.adobe.com
-- Layout: Nav, hero search band, category tiles, then a grid that mixes collections and assets. Structured and banded, close to Shutterstock in rhythm.
-- Navigation: Single-row nav with a dropdown for asset type and prominent links to Creative Cloud products.
-- Color usage: White canvas with Adobe's brand red on primary actions only. Otherwise neutral — the most restrained paid competitor.
-- Typography: Adobe's own sans family. Consistent with the parent product suite — same type voice across the ecosystem.
-- Primary action: "Start free trial" / pricing. Buyer model, but the CTA is framed as a trial rather than a plan.
-- Grid type: Uniform grid with occasional spanning feature tiles. The most regular grid of the five.
-- Search prominence: High. Large search band with a media-type dropdown attached, mirroring the Shutterstock pattern.
-- Filters: Asset-type switch at the top, then a left-hand filter panel in results. Homepage uses category tiles as the entry point.
-- What works: Uniform grid makes pricing and licensing comparison easy — a buyer can scan and decide. Integration messaging ("included with Creative Cloud") is a strong differentiator.
-- What's weak: Uniform grid is the least exciting presentation of photographs — the images feel like catalogue entries rather than work. Least visually distinctive of the five.
+### 5. Nextdoor — local listings, filter-driven
+- URL: https://nextdoor.com
+- Capture: app screen
+- Layout: Search field, then filter chips (All categories, Free, 15 mi, Most Relevant), then a 2-column listings grid.
+- Nav & search: Search field at the top; scope controls appear as chips directly beneath it, each showing its current value. Bottom tab bar: Home, Search, For Sale, Faves.
+- Grid: 2 columns of listings with price, distance and age on each tile. Ad tiles sit inline with real inventory.
+- Primary action: The filter chips — distance and category are what make the feed usable.
+- Mobile pattern: Chips-above-grid as the scope control: category, price and distance each visible and tappable in place, with no sheet or drawer. The only one of the five to run inline ad tiles.
+- Works: Filter chips sit above the grid and show their own state, so the scope is legible without opening a panel.
+- Weak: Sponsored tiles are visually indistinguishable from real listings until you read the label.
 
 ---
 
 ## Cross-App Patterns
 
-**Industry standards (3+ of 5 agree — match these or look amateur):**
+**Industry standards**
 
-- **Prominent search in the nav.** All 5. Every competitor makes search the widest, highest-contrast element above the fold. On a photo marketplace, searching *is* the primary task.
-- **Flexible grid over uniform grid.** 4 of 5 (Unsplash, Shutterstock, Pexels, Getty) use masonry or partially spanning grids. Only Adobe Stock runs a fully uniform grid. Photographs have different aspect ratios; cropping them all into one shape loses the work.
-- **Minimal colour palette.** 3 of 5 (Unsplash, Pexels, Getty) stay near-monochrome and let the photographs supply the colour. The two that use a strong brand accent (Shutterstock, Adobe Stock) do it because they're selling plans — the accent carries conversion weight.
-- **Category chips or tiles as the browse entry point.** All 5. Nobody expects a first-time visitor to type a query; a horizontal chip row or tile set gives a zero-thought browse path.
-- **Search first, filters second.** All 5 push deep filtering into the results view. Nobody burdens the homepage with a full filter panel.
+- Search is the first element on every home screen — a full-width field in the top bar, not an icon. 5 of 5.
+- A 2-column grid is the default catalogue view. 3 of 5 (Depop, Vinted, Nextdoor); the other two use editorial carousels or labelled rows.
+- Bottom tab bars everywhere, and search is promoted to a first-class tab in 4 of 5.
 
-**Differentiators (1–2 of 5 — safe to adopt, hard to copy):**
+**Differentiators**
 
-- **Editorial curation as content.** Getty is the only one telling a story on the homepage. Everyone else shows a catalogue. For a free or community-positioned marketplace this is cheap to do and unusually distinctive.
-- **Photographic category chips.** Pexels renders its chips with images, not just labels — browsing feels visual. Nobody else does this.
-- **Metadata density as a buyer tool.** Shutterstock puts asset type and tier on the card. For a paid product this reduces the click-to-qualify cost; for a free product it's noise.
+- Scope controls sit above the grid as visible chips or tabs — category, distance, condition. 3 of 5.
+- Only Depop puts a commerce action (Sell) in the bottom bar's thumb zone. The other four leave the bottom third to passive tabs.
 
-**Positioning split (this drives every other decision):**
+**Opportunity**
 
-- **Free / community model — Unsplash, Pexels:** primary CTA is *contribution* ("Submit an image", "Upload"). The homepage is a gallery. Colour is minimal because nothing needs to convert. Trust is built by showing volume and quality of work.
-- **Paid / professional model — Shutterstock, Getty, Adobe Stock:** primary CTA is *purchase* (plan, trial, pricing). The homepage is a merchandising surface. There's a pricing or subscription band, deeper taxonomy, and either a strong accent colour or a deliberate premium restraint doing the conversion work.
-
-**Common frustration point (opportunity):**
-
-None of the five handle the *empty or thin result* state well, and none of them explain licensing clearly at the point of browsing — a licence badge is rare on a grid card. For a new marketplace, "what can I actually do with this photo" is an unclaimed position on the homepage.
+- Opportunity: no competitor puts a persistent search or filter control in the bottom third. The nearest field to a thumb is still in the top 10% of the viewport — an unclaimed, mobile-native position.
 
 ---
 
 ## Recommendation
 
-**Pick:** Unsplash
+**Pick:** Depop
 
-**Why:** Unsplash is the only competitor whose above-the-fold is *only* the product — a slim nav, a full-width search, and a dense masonry grid that starts immediately. It maps cleanly onto the DESIGN.md baseline: warm-white canvas (`#FDFCF8`), near-monochrome palette, one restrained accent for the single primary action, sharp 0px edges, and Fauna One titles against Inter for everything else. The minimal-chrome approach also means the photographs are the only source of colour, which is exactly what the token system is built for — `primary` reserved for the one CTA, `border` for separation only.
+**Why:** Depop is the only one of the five whose home screen is a pure grid — no promo band, no hero,
+photographs starting within the first 120px. It carries price, brand and size on every tile, pins a
+full-width search field in the top bar, and is the only app to put a real commerce action in the
+bottom tab bar. Its two weaknesses — a scope-less search field and no filter chips — are both
+fixable, which gives Phase 3 a brief rather than a template to copy.
 
-Two things to take and one to leave:
-
-- **Take** Unsplash's immediate-grid density and its chip row — the browse path is the differentiator.
-- **Take** Getty's editorial framing, in a light dose — one curated collection band below the grid, not a full hero story. It's the cheapest way to look unlike the catalogue competitors.
-- **Leave** Unsplash's CTA ambiguity. Unsplash's "Submit an image" is quiet to the point of being invisible. The homepage needs one unmistakable primary action, and it should be search — with a single `primary`-coloured CTA beside it.
+**Chosen:** Depop (human pick — awaiting confirmation in session)

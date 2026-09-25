@@ -1,5 +1,6 @@
 # Audience work — local only
 output/research/*
+output/research/screens/*
 output/figma/*
 output/images/*
 !output/**/.gitkeep
